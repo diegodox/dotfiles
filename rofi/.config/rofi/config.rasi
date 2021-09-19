@@ -1,0 +1,7 @@
+configuration {
+    show-icons: true;
+    font: "Hack Nerd Font 16";
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
