@@ -122,8 +122,7 @@ screens = [
                 widget.Spacer(length = int(separeter_padding/2)),
                 widget.Image(
                     filename='~/.config/qtile/icon/archlinux.ico',
-                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('rofi -show drun')}
-                    #mouse_callbacks = {'Button1': lambda: logger.error("mouse callback")}
+                    mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(os.path.expanduser('~') + '/.config/rofi/powermenu/powermenu.sh')}
                 ),
                 widget.Sep(padding=separeter_padding, foreground=separeter_foreground),
                 widget.GroupBox(
