@@ -5,9 +5,10 @@ set nowrap
 set nojoinspaces
 set smarttab
 set expandtab
+set number
 set backspace=indent,eol,start
 set encoding=utf-8
-
+set mouse=a
 " Keyboard shortcuts
 nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
