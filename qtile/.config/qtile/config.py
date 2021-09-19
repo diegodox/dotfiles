@@ -55,7 +55,7 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating focused window"),
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod, "control"], "q", lazy.spawn(os.path.expanduser('~') + '/.config/rofi/powermenu/powermenu.sh'), desc="Shutdown Qtile"),
 
     # Execute App
     Key([mod], "p", lazy.spawn("rofi -show combi -combi-modi window,drun -sidebar-mode -modi 'run,ssh,filebrowser'"),
