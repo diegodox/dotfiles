@@ -1,27 +1,13 @@
-" Editor settings
-syntax enable
-filetype plugin indent on
-set nowrap
-set nojoinspaces
-set smarttab
-set expandtab
-set number
-set backspace=indent,eol,start
-set encoding=utf-8
-set mouse=a
-" Keyboard shortcuts
-nnoremap <C-c> <Esc>
-inoremap <C-c> <Esc>
-vnoremap <C-c> <Esc>
-snoremap <C-c> <Esc>
-xnoremap <C-c> <Esc>
-cnoremap <C-c> <Esc>
-onoremap <C-c> <Esc>
-lnoremap <C-c> <Esc>
-tnoremap <C-c> <Esc>
+" -----------------------------------------------------------------------------
+" VIMRC
+" -----------------------------------------------------------------------------
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+" Load dein plugin manager and each plugin settings
+source $HOME/.config/nvim/plugin_settings/dein.vim
+
+" Load general editor settings
+source $HOME/.config/nvim/settings.vim 
+
+" Load general Keymap
+source $HOME/.config/nvim/keymap.vim
 

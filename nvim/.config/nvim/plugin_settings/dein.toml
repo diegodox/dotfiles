@@ -1,0 +1,87 @@
+# -----------------------------------------------------------------------------
+# Plugin list (for dein plugin manager)
+# -----------------------------------------------------------------------------
+
+# --------
+# General
+# --------
+
+# Plugin manager
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Auto change current dir
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+# Close buffer keep window layout
+[[plugins]]
+repo = 'rbgrouleff/bclose.vim'
+
+# Better window resizing
+[[plugins]]
+repo = 'simeji/winresizer'
+
+# Cool status bar
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+# File manager ranger in vim
+[[plugins]]
+repo = 'francoiscabrol/ranger.vim'
+
+# Git TUI lazygit in vim
+[[plugins]]
+repo = 'kdheepak/lazygit.nvim'
+
+# Fuzzy finder fzf in vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+# AST for vim
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
+# Colorscheme gruvbox
+[[plugins]]
+repo = 'gruvbox-community/gruvbox'
+
+# ----
+# lsp
+# ----
+
+# Maybe essential for built-in lsp?
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+
+# LSP completion source for nvim-cmp
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lsp'
+
+# LSP completion
+[[plugins]]
+repo = 'hrsh7th/nvim-cmp'
+
+# Path completion
+[[plugins]]
+repo = 'hrsh7th/cmp-path'
+
+# Snippet completion source for nvim-cmp
+[[plugins]]
+repo = 'hrsh7th/cmp-vsnip'
+
+# Code action
+[[plugins]]
+repo = 'kosayoda/nvim-lightbulb'
+
+# -----
+# rust
+# -----
+
+# Provide inlay hints, and more?
+[[plugins]]
+repo = 'simrat39/rust-tools.nvim'
+
