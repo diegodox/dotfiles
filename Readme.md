@@ -1,3 +1,3 @@
 # Dotfiles
 
-`stow {folder_name}` to install.
+`stow {folder_name}` on homedir to install.
