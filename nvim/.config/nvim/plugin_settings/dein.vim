@@ -26,7 +26,6 @@ if dein#check_install()
 endif
 
 " Load general plugin settings
-source $HOME/.config/nvim/plugin_settings/airline.vim
 source $HOME/.config/nvim/plugin_settings/bclose.vim
 source $HOME/.config/nvim/plugin_settings/gruvbox.vim
 source $HOME/.config/nvim/plugin_settings/ranger.vim
@@ -35,6 +34,7 @@ source $HOME/.config/nvim/plugin_settings/winresizer.vim
 source $HOME/.config/nvim/plugin_settings/treesitter.vim
 source $HOME/.config/nvim/plugin_settings/fzf.vim
 source $HOME/.config/nvim/plugin_settings/lazygit.vim
+source $HOME/.config/nvim/plugin_settings/lightline.vim
 
 " Load lsp settings
 source $HOME/.config/nvim/plugin_settings/lsp.vim

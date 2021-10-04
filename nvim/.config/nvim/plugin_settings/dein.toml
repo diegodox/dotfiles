@@ -24,10 +24,15 @@ repo = 'simeji/winresizer'
 
 # Cool status bar
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'itchyny/lightline.vim'
 
+# Tabline(buffer list on top) for lightline
 [[plugins]]
-repo = 'vim-airline/vim-airline-themes'
+repo = 'taohexxx/lightline-buffer'
+
+# File type icon for lightline-buffer
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
 
 # File manager ranger in vim
 [[plugins]]
