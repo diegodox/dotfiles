@@ -18,16 +18,17 @@
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
 
 " key bindings
-"imap <silent> <C-Space> <Plug>(completion_trigger)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gt <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> <C-r> <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <C-h> <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-n> <cmd>lua vim.lsp.goto_prev()<CR>
-nnoremap <silent> <C-p> <cmd>lua vim.lsp.goto_next()<CR>
-nnoremap <silent> <C-.> <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> <C-S-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-S-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <C-t> <cmd>lua vim.lsp.buf.code_action()<CR>
 
 " source each lang lsp
 source $HOME/.config/nvim/plugin_settings/complete.vim
