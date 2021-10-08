@@ -54,6 +54,10 @@ repo = 'nvim-treesitter/nvim-treesitter'
 [[plugins]]
 repo = 'gruvbox-community/gruvbox'
 
+# Indent visualizer
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
 # ----
 # lsp
 # ----

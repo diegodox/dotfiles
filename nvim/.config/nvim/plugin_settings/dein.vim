@@ -35,6 +35,7 @@ source $HOME/.config/nvim/plugin_settings/treesitter.vim
 source $HOME/.config/nvim/plugin_settings/fzf.vim
 source $HOME/.config/nvim/plugin_settings/lazygit.vim
 source $HOME/.config/nvim/plugin_settings/lightline.vim
+source $HOME/.config/nvim/plugin_settings/indentguides.vim
 
 " Load lsp settings
 source $HOME/.config/nvim/plugin_settings/lsp.vim
