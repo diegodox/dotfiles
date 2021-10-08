@@ -36,7 +36,7 @@ repo = 'ryanoasis/vim-devicons'
 
 # File manager ranger in vim
 [[plugins]]
-repo = 'francoiscabrol/ranger.vim'
+repo =  'iberianpig/ranger-explorer.vim'
 
 # Git TUI lazygit in vim
 [[plugins]]
