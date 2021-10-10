@@ -1,3 +1,6 @@
 [user]
 	name = Diego Fujii
 	email = android.mxdiego9@gmail.com
+[diff]
+    algorithm = histogram
+    colorMoved = dimmed-zebra
