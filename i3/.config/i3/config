@@ -53,10 +53,17 @@ set $ws2 2
 set $ws3 3
 set $ws4 4 CHAT
 set $ws5 5 MUSIC
+set $ws6 6 VBOX
 
+# window assign rule
 assign [class="Slack"] $ws4
 assign [class="Zoom"] $ws4
 for_window [class="Spotify"] move to workspace $ws5
+assign [class="VirtualBox Manager"] $ws6
+assign [class="VirtualBox Machine"] $ws6
+
+for_window [class="VirtualBox Machine"] floating enable
+for_window [class="mpv"] floating enable
 
 # -----------------------------------------------------------------------------
 # autostart app
