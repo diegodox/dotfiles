@@ -61,7 +61,7 @@ modules-right = filesystem pulseaudio cpu cpu_temperature memory eth date
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+tray-background = #282828
 
 wm-restack = i3
 
