@@ -10,6 +10,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# Start page
+[[plugins]]
+repo = 'mhinz/vim-startify'
+
 # Auto change current dir
 [[plugins]]
 repo = 'airblade/vim-rooter'
