@@ -46,10 +46,6 @@ repo =  'iberianpig/ranger-explorer.vim'
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
 
-# Fuzzy finder fzf in vim
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-
 # AST for vim
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
@@ -61,6 +57,18 @@ repo = 'gruvbox-community/gruvbox'
 # Indent visualizer
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+
+# Depended by telescope
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+# Popup window fizzy-finder
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+
+# Telescope Manage project
+[[plugins]]
+repo = 'nvim-telescope/telescope-project.nvim'
 
 # ----
 # lsp
