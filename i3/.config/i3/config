@@ -65,7 +65,7 @@ assign [class="VirtualBox Manager"] $ws6
 assign [class="VirtualBox Machine"] $ws6
 
 # window to be float on default
-for_window [class="Zoom"] floating enable
+for_window [class="zoom"] floating enable
 for_window [class="VirtualBox Machine"] floating enable
 for_window [class="mpv"] floating enable
 
