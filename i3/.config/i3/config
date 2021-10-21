@@ -13,6 +13,9 @@ gaps right 3
 gaps left 3
 gaps inner 3
 
+# Default layout to tabbed
+workspace_layout tabbed
+
 # Only show border when a workspace has multiple container
 smart_borders on
 
