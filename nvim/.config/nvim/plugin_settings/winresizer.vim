@@ -5,13 +5,14 @@
 let g_winresizer_enable = 1
 let g:wiresizer_finish_with_escape = 1
 
-nnoremap <C-e> <nop>
+" Disable winresizer toggle key
+let g:winresizer_start_key = '<nop>'
 
 " Exapand window size to left
-nnoremap <silent> <M-h> :WinResizerStartResize<CR>h<Esc>
+nnoremap <silent> <M-h> :silent WinResizerStartResize<CR>h<Esc>
 " Exapand window size to down
-nnoremap <silent> <M-j> :WinResizerStartResize<CR>j<Esc>
+nnoremap <silent> <M-j> :silent WinResizerStartResize<CR>j<Esc>
 " Exapand window size to up
-nnoremap <silent> <M-k> :WinResizerStartResize<CR>k<Esc>
+nnoremap <silent> <M-k> :silent WinResizerStartResize<CR>k<Esc>
 " Exapand window size to rihgt
-nnoremap <silent> <M-l> :WinResizerStartResize<CR>l<Esc>
+nnoremap <silent> <M-l> :silent WinResizerStartResize<CR>l<Esc>
