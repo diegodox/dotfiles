@@ -109,8 +109,8 @@ set $mod Mod4
 # system key bind
 # -----------------------------------------------------------------------------
 
-# reload the configuration file
-bindsym $mod+Ctrl+r reload
+# restart i3
+bindsym $mod+Ctrl+r restart
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+q exec ~/.config/rofi/powermenu/powermenu.sh
 
