@@ -3,21 +3,21 @@
 " -----------------------------------------------------------------------------
 
 " Save file
-nnoremap <C-s> :w<CR>
+nnoremap <C-s> <Cmd>write<CR>
 
 " Go next buffer
-nnoremap <silent> <S-n> :bn<CR>
+nnoremap <silent> <S-n> <Cmd>bn<CR>
 " Go previous buffer
-nnoremap <silent> <S-p> :bp<CR>
+nnoremap <silent> <S-p> <Cmd>bp<CR>
 
 " Close window
-nnoremap <silent> <C-x> :close<CR>
+nnoremap <silent> <C-x> <Cmd>close<CR>
 
 " Move window focus
-nnoremap <S-h> <C-w>h
-nnoremap <S-j> <C-w>j
-nnoremap <S-k> <C-w>k
-nnoremap <S-l> <C-w>l
+nnoremap <silent> <S-h> <Cmd>wincmd h<CR>
+nnoremap <silent> <S-j> <Cmd>wincmd j<CR>
+nnoremap <silent> <S-k> <Cmd>wincmd k<CR>
+nnoremap <silent> <S-l> <Cmd>wincmd l<CR>
 
 " Alternative for ESC
 " Ctrl+k as Esc and set IME English
