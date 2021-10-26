@@ -70,6 +70,18 @@ repo = 'nvim-telescope/telescope.nvim'
 [[plugins]]
 repo = 'nvim-telescope/telescope-project.nvim'
 
+[[plugins]]
+repo = "tpope/vim-fugitive"
+
+# Git gutter icon
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add="""
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '➜'
+let g:gitgutter_sign_removed = '✘'
+"""
+
 # ----
 # lsp
 # ----
