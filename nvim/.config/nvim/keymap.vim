@@ -10,9 +10,6 @@ nnoremap <silent> <S-n> <Cmd>bn<CR>
 " Go previous buffer
 nnoremap <silent> <S-p> <Cmd>bp<CR>
 
-" Close window
-nnoremap <silent> <C-x> <Cmd>close<CR>
-
 " Move window focus
 nnoremap <silent> <S-h> <Cmd>wincmd h<CR>
 nnoremap <silent> <S-j> <Cmd>wincmd j<CR>
