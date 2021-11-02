@@ -8,21 +8,21 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 " install dein if not installed
 if !isdirectory(s:dein_repo_dir)
-        call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+    call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 let s:toml = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 if dein#load_state(s:dein_dir)
-        call dein#begin(s:dein_dir)
-        call dein#load_toml(s:toml)
-        call dein#end()
-        call dein#save_state()
+    call dein#begin(s:dein_dir)
+    call dein#load_toml(s:toml)
+    call dein#end()
+    call dein#save_state()
 endif
 
 " Install Uninstalled PlugIn
 if dein#check_install()
-        call dein#install()
+    call dein#install()
 endif
 
 " Load general plugin settings
