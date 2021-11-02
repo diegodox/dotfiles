@@ -29,4 +29,5 @@ set backspace=indent,eol,start " Enable backspace to delete these (in insert mod
 set nowrap
 set ignorecase
 set smartcase
+set scrolloff=5
 
