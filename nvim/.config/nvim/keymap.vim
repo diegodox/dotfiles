@@ -17,6 +17,10 @@ nnoremap <silent> <S-k> <Cmd>wincmd k<CR>
 nnoremap <silent> <S-l> <Cmd>wincmd l<CR>
 
 
+" Keep highlighted while changing indent
+vnoremap > >gv
+vnoremap < <gv
+
 " Disable Allow keys in normal mode
 nnoremap <up> <nop>
 nnoremap <down> <nop>
