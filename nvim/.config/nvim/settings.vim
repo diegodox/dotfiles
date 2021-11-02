@@ -17,8 +17,8 @@ set shiftwidth=4 " The number of space charactres inserted for indatation
 set smarttab
 set expandtab " Converts tabs to spaces
 set autoindent
-set clipboard+=unnamedplus " Copy paste with system clipboard
 set number relativenumber
+set clipboard=unnamedplus " Copy paste with system clipboard
 set updatetime=300 " Faster completion
 set noshowmode " Airline can show mode
 set mouse=a
