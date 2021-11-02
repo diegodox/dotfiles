@@ -27,4 +27,6 @@ set iskeyword+=- " Treat dash separatd words as a word text object
 set colorcolumn=80
 set backspace=indent,eol,start " Enable backspace to delete these (in insert mode)
 set nowrap
+set ignorecase
+set smartcase
 
