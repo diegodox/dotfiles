@@ -4,6 +4,7 @@
 
 syntax enable
 filetype plugin indent on
+set title " set window title as buffer name
 set hidden
 set encoding=utf-8
 set fileencoding=utf-8
