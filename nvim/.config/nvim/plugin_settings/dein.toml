@@ -86,6 +86,10 @@ let g:gitgutter_sign_removed = '✘'
 [[plugins]]
 repo = 'folke/which-key.nvim'
 
+# Undo with tree
+[[plugins]]
+repo = 'mbbill/undotree'
+
 # ----
 # lsp
 # ----
