@@ -30,4 +30,5 @@ set nowrap
 set ignorecase
 set smartcase
 set scrolloff=5
+set signcolumn=yes
 
