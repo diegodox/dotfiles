@@ -26,6 +26,7 @@ if dein#check_install()
 endif
 
 " Load general plugin settings
+luafile $HOME/.config/nvim/plugin_settings/which_key.lua
 source $HOME/.config/nvim/plugin_settings/bclose.vim
 source $HOME/.config/nvim/plugin_settings/gruvbox.vim
 source $HOME/.config/nvim/plugin_settings/ranger.vim
