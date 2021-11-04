@@ -116,3 +116,7 @@ let g:coc_global_extensions = [
 [[plugins]]
 repo = 'fannheyward/telescope-coc.nvim'
 
+# GitHub copilot
+[[plugins]]
+repo = 'github/copilot.vim'
+
