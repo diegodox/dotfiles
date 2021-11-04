@@ -57,5 +57,12 @@ vim.api.nvim_set_keymap('n', '<C-p>', '<Cmd>lua require"telescope.builtin".find_
 -- telescope-project
 vim.api.nvim_set_keymap('n', '<M-p>', '<Cmd>lua require"telescope".extensions.project.project{}<CR>', {noremap = true, silent = true})
 
+-- telescope-coc
+require('telescope').load_extension('coc')
+vim.api.nvim_set_keymap('n', 'gr', '<Cmd>lua require"telescope".extensions.coc.references{}<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua require"telescope".extensions.coc.definitions{}<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gi', '<Cmd>lua require"telescope".extensions.coc.implementations{}<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', 'gt', '<Cmd>lua require"telescope".extensions.coc.type_definitions{}<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-t>', '<Cmd>lua require"telescope".extensions.coc.code_actions{}<CR>', {noremap = true, silent = true})
 EOF
 

@@ -112,3 +112,7 @@ let g:coc_global_extensions = [
     \]
 '''
 
+# Telescope CoC integration
+[[plugins]]
+repo = 'fannheyward/telescope-coc.nvim'
+
