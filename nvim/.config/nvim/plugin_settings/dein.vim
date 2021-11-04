@@ -25,6 +25,8 @@ if dein#check_install()
     call dein#install()
 endif
 
+source $HOME/.config/nvim/plugin_settings/coc.vim
+
 " Load general plugin settings
 luafile $HOME/.config/nvim/plugin_settings/which_key.lua
 source $HOME/.config/nvim/plugin_settings/bclose.vim
@@ -39,13 +41,4 @@ source $HOME/.config/nvim/plugin_settings/lightline.vim
 source $HOME/.config/nvim/plugin_settings/indentguides.vim
 source $HOME/.config/nvim/plugin_settings/undotree.vim
 source $HOME/.config/nvim/plugin_settings/startify.vim
-
-" Load lsp settings
-source $HOME/.config/nvim/plugin_settings/lsp.vim
-
-" Load file type settings
-source $HOME/.config/nvim/plugin_settings/python.vim
-source $HOME/.config/nvim/plugin_settings/rust.vim
-source $HOME/.config/nvim/plugin_settings/tex.vim
-source $HOME/.config/nvim/plugin_settings/vimls.vim
 

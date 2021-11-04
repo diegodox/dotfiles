@@ -94,39 +94,21 @@ repo = 'mbbill/undotree'
 # lsp
 # ----
 
-# Maybe essential for built-in lsp?
+# LSP integration with coc
 [[plugins]]
-repo = 'neovim/nvim-lspconfig'
-
-# LSP completion source for nvim-cmp
-[[plugins]]
-repo = 'hrsh7th/cmp-nvim-lsp'
-
-# LSP completion
-[[plugins]]
-repo = 'hrsh7th/nvim-cmp'
-
-# Path completion
-[[plugins]]
-repo = 'hrsh7th/cmp-path'
-
-# Snippet completion source for nvim-cmp
-[[plugins]]
-repo = 'hrsh7th/cmp-vsnip'
-
-# Code action
-[[plugins]]
-repo = 'kosayoda/nvim-lightbulb'
-
-# nvim-cmp source for neovim Lua API
-[[plugins]]
-repo = 'hrsh7th/cmp-nvim-lua'
-
-# -----
-# rust
-# -----
-
-# Provide inlay hints, and more?
-[[plugins]]
-repo = 'simrat39/rust-tools.nvim'
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+build = '''
+git checkout release
+'''
+hook_add = '''
+let g:coc_global_extensions = [
+    \'coc-json',
+    \'coc-lightbulb',
+    \'coc-lua',
+    \'coc-rust-analyzer',
+    \'coc-texlab',
+    \'coc-toml',
+    \]
+'''
 

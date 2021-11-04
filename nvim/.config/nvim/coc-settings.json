@@ -1,0 +1,18 @@
+{
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.messageTarget": "echo",
+    "diagnostic.refreshOnInsertMode": true,
+    "suggest.noselect": false,
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "suggest.enablePreselect": true,
+    "coc.source.around.enable": false,
+    "coc.source.buffer.enable": false,
+    "coc.preferences.formatOnSaveFiletypes": ["rust"],
+    "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
+    "rust-analyzer.inlayHints.refreshOnInsertMode": true,
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "lightbulb.enableSign": true,
+    "lightbulb.signText": "💡",
+    "lightbulb.enableVirtualText": false
+}
