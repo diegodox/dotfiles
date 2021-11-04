@@ -47,4 +47,5 @@ source $HOME/.config/nvim/plugin_settings/lsp.vim
 source $HOME/.config/nvim/plugin_settings/python.vim
 source $HOME/.config/nvim/plugin_settings/rust.vim
 source $HOME/.config/nvim/plugin_settings/tex.vim
+source $HOME/.config/nvim/plugin_settings/vimls.vim
 

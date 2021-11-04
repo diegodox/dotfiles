@@ -1,18 +1,6 @@
 " -----------------------------------------------------------------------------
-" LSP settings
+" nvim buildin LSP settings
 " -----------------------------------------------------------------------------
-
-" Use completion-nvim in every buffer
-"autocmd BufEnter * lua require'completion'.on_attach()
-
-" Set completeopt to have a better completion experience
-"set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-"set shortmess+=c
-
-" completion-nvim doesn't trigger completion on delete by default, enable it by
-"let g:completion_trigger_on_delete = 1
 
 " code action
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
@@ -30,6 +18,19 @@ nnoremap <silent> <C-S-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-S-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <silent> <C-t> <cmd>lua vim.lsp.buf.code_action()<CR>
 
-" source each lang lsp
+" source complete setting
 source $HOME/.config/nvim/plugin_settings/complete.vim
 
+"lua <<EOF
+"    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+"        vim.lsp.diagnostic.on_publish_diagnostics, {
+"            -- Enable underline, use default values
+"            underline = true,
+"             -- Enable virtual text, override spacing to 4
+"            virtual_text = {
+"                spacing = 4,
+"            },
+"            update_in_insert = true,
+"        }
+"    )
+"EOF

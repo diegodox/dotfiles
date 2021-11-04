@@ -118,6 +118,10 @@ repo = 'hrsh7th/cmp-vsnip'
 [[plugins]]
 repo = 'kosayoda/nvim-lightbulb'
 
+# nvim-cmp source for neovim Lua API
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lua'
+
 # -----
 # rust
 # -----

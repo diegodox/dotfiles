@@ -7,14 +7,14 @@ lua <<EOF
 
     -- rust-tools options
     local rust_tool = { 
-            
+         
         -- Automatically set inlay hints (type hints)
         autoSetHints = true,
-            
+          
         -- Whether to show hover actions inside the hover window
         -- This overrides the default hover handler
         hover_with_actions = true,
-            
+          
         -- These apply to the default RustSetInlayHints command
         inlay_hints = {
 
@@ -52,6 +52,7 @@ lua <<EOF
              -- The color of the hints
             highlight = "Comment",
         },
+
     }
 
     cmp.setup({
@@ -84,6 +85,7 @@ lua <<EOF
         sources = {
             { name = "nvim_lsp" },
             { name = "path" },
+            { name = "nvim_lua" },
         }
     })
 EOF
