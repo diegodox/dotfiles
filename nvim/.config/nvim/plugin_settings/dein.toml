@@ -200,3 +200,12 @@ hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/telescope_coc.lua
 [[plugins]]
 repo = 'github/copilot.vim'
 
+# -----
+# rust
+# -----
+
+# Cargo.toml support
+[[plugins]]
+repo = 'saecki/crates.nvim'
+hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/crates.lua'
+
