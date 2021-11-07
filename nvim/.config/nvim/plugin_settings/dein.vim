@@ -20,19 +20,25 @@ if dein#load_state(s:dein_dir)
     call dein#save_state()
 endif
 
+" non lazy plugins' dein-options-hook_source cannot be called.
+" You must call it by dein#call_hook() if needed.
+call dein#call_hook('source')
+
 " Install Uninstalled PlugIn
 if dein#check_install()
     call dein#install()
 endif
 
 source $HOME/.config/nvim/plugin_settings/coc.vim
+" In Vim initializing, you must call the "hook_post_source" hooks manually
+" in VimEnter if needed.
+autocmd VimEnter * call dein#call_hook('post_source')
 
 " Load general plugin settings
 luafile $HOME/.config/nvim/plugin_settings/which_key.lua
 source $HOME/.config/nvim/plugin_settings/bclose.vim
 source $HOME/.config/nvim/plugin_settings/gruvbox.vim
 source $HOME/.config/nvim/plugin_settings/ranger.vim
-source $HOME/.config/nvim/plugin_settings/router.vim
 source $HOME/.config/nvim/plugin_settings/winresizer.vim
 source $HOME/.config/nvim/plugin_settings/treesitter.vim
 source $HOME/.config/nvim/plugin_settings/telescope.vim

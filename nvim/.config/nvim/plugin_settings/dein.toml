@@ -17,6 +17,10 @@ repo = 'mhinz/vim-startify'
 # Auto change current dir
 [[plugins]]
 repo = 'airblade/vim-rooter'
+hook_post_source = '''
+let g:router_targets = '/,*'
+let g:router_patterns = ['.git']
+'''
 
 # Close buffer keep window layout
 [[plugins]]
