@@ -38,7 +38,6 @@ autocmd VimEnter * call dein#call_hook('post_source')
 luafile $HOME/.config/nvim/plugin_settings/which_key.lua
 source $HOME/.config/nvim/plugin_settings/gruvbox.vim
 source $HOME/.config/nvim/plugin_settings/ranger.vim
-source $HOME/.config/nvim/plugin_settings/winresizer.vim
 source $HOME/.config/nvim/plugin_settings/treesitter.vim
 source $HOME/.config/nvim/plugin_settings/telescope.vim
 source $HOME/.config/nvim/plugin_settings/lazygit.vim
