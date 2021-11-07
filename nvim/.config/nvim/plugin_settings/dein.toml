@@ -81,6 +81,7 @@ nnoremap <silent> <C-b> <Cmd>RangerOpenCurrentFile<CR>
 # Git TUI lazygit in vim
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
+hook_source = 'nnoremap <silent> <C-g> :LazyGit<CR>'
 
 # AST for vim
 [[plugins]]

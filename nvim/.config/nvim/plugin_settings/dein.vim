@@ -39,7 +39,6 @@ luafile $HOME/.config/nvim/plugin_settings/which_key.lua
 source $HOME/.config/nvim/plugin_settings/gruvbox.vim
 source $HOME/.config/nvim/plugin_settings/treesitter.vim
 source $HOME/.config/nvim/plugin_settings/telescope.vim
-source $HOME/.config/nvim/plugin_settings/lazygit.vim
 source $HOME/.config/nvim/plugin_settings/lightline.vim
 source $HOME/.config/nvim/plugin_settings/indentguides.vim
 source $HOME/.config/nvim/plugin_settings/undotree.vim
