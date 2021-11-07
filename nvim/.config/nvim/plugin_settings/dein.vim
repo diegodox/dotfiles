@@ -38,6 +38,5 @@ autocmd VimEnter * call dein#call_hook('post_source')
 luafile $HOME/.config/nvim/plugin_settings/which_key.lua
 source $HOME/.config/nvim/plugin_settings/telescope.vim
 source $HOME/.config/nvim/plugin_settings/lightline.vim
-source $HOME/.config/nvim/plugin_settings/undotree.vim
 source $HOME/.config/nvim/plugin_settings/startify.vim
 
