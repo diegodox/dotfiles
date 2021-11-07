@@ -3,8 +3,14 @@
 " -----------------------------------------------------------------------------
 
 lua <<EOF
+local actions = require("telescope.actions")
 require("telescope").setup {
     defaults = {
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+            },
+        },
         file_ignore_patterns = {
             ".git/.*",
             ".npm/.*"
@@ -13,13 +19,6 @@ require("telescope").setup {
             filesize_limit = 10
         }
     },
-
-    -- telescope-project
-    extensions = {
-        project = {
-            hidden_files = true
-        }
-    }
 }
 
 -- register whichkey
@@ -34,17 +33,6 @@ wk.register(
             g = { "<Cmd>Telescope live_grep<CR>", "Grep Line" }, -- create a binding with label
             r = { "<Cmd>Telescope oldfiles<CR>", "Open Recent File" }, -- additional options for creating the keymap
         },
-        c = {
-            name = "coc",
-            r = { "<Cmd>Telescope coc references<CR>", "references" },
-            l = { "<Cmd>Telescope coc links<CR>", "links" },
-            c = { "<Cmd>Telescope coc commands<CR>", "coc commands" },
-            t = { "<Cmd>Telescope coc definitions<CR>", "type definitions" },
-            D = { "<Cmd>Telescope coc definitions<CR>", "definitions" },
-            d = { "<Cmd>Telescope coc diagnostics<CR>", "diagnostics" },
-            s = { "<Cmd>Telescope coc document_symbols<CR>", "document symbols" },
-            a = { "<Cmd>Telescope coc code_actions<CR>", "actions" },
-        }
     },
     {
         prefix = "<Space>"
@@ -55,12 +43,5 @@ wk.register(
 vim.api.nvim_set_keymap('n', '<C-p>', '<Cmd>lua require"telescope.builtin".find_files({ prompt_prefix = "🔍", hidden = true })<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<M-p>', '<Cmd>lua require"telescope.builtin".buffers({ prompt_prefix = "🔍", hidden = true })<CR>', {noremap = true, silent = true})
 
--- telescope-coc
-require('telescope').load_extension('coc')
-vim.api.nvim_set_keymap('n', 'gr', '<Cmd>lua require"telescope".extensions.coc.references{}<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua require"telescope".extensions.coc.definitions{}<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'gi', '<Cmd>lua require"telescope".extensions.coc.implementations{}<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'gt', '<Cmd>lua require"telescope".extensions.coc.type_definitions{}<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-t>', '<Cmd>lua require"telescope".extensions.coc.code_actions{}<CR>', {noremap = true, silent = true})
 EOF
 

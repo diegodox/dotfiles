@@ -35,5 +35,4 @@ source $HOME/.config/nvim/plugin_settings/coc.vim
 autocmd VimEnter * call dein#call_hook('post_source')
 
 " Load general plugin settings
-source $HOME/.config/nvim/plugin_settings/telescope.vim
 

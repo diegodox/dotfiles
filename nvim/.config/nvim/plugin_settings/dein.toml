@@ -131,7 +131,8 @@ repo = 'nvim-lua/plenary.nvim'
 # Popup window fizzy-finder
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-
+depends =  'folke/which-key.nvim'
+hook_post_source = 'source $HOME/.config/nvim/plugin_settings/telescope.vim'
 
 [[plugins]]
 repo = "tpope/vim-fugitive"
@@ -191,6 +192,8 @@ let g:coc_global_extensions = [
 # Telescope CoC integration
 [[plugins]]
 repo = 'fannheyward/telescope-coc.nvim'
+depends = ['folke/which-key.nvim', 'nvim-telescope/telescope.nvim', 'neoclide/coc.nvim']
+hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/telescope_coc.lua'
 
 # GitHub copilot
 [[plugins]]
