@@ -4,3 +4,9 @@
 [diff]
     algorithm = histogram
     colorMoved = dimmed-zebra
+[core]
+	pager = delta
+[delta]
+    line-numbers = true
+[interactive]
+    diffFilter = delta
