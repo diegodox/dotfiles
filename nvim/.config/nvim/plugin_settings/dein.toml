@@ -60,10 +60,13 @@ nnoremap <silent> <M-l> :silent WinResizerStartResize<CR>l<Esc>
 # Cool status bar
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+depends = ['taohexxx/lightline-buffer', 'tpope/vim-fugitive', 'airblade/vim-gitgutter']
+hook_source = 'source $HOME/.config/nvim/plugin_settings/lightline.vim'
 
 # Tabline(buffer list on top) for lightline
 [[plugins]]
 repo = 'taohexxx/lightline-buffer'
+depends = 'ryanoasis/vim-devicons'
 
 # File type icon for lightline-buffer
 [[plugins]]
