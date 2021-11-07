@@ -1,8 +1,7 @@
-" -----------------------------------------------------------------------------
-" Telescope settings
-" -----------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+-- telescope settings
+-------------------------------------------------------------------------------
 
-lua <<EOF
 local actions = require("telescope.actions")
 require("telescope").setup {
     defaults = {
@@ -42,6 +41,4 @@ wk.register(
 -- buildin features
 vim.api.nvim_set_keymap('n', '<C-p>', '<Cmd>lua require"telescope.builtin".find_files({ prompt_prefix = "🔍", hidden = true })<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<M-p>', '<Cmd>lua require"telescope.builtin".buffers({ prompt_prefix = "🔍", hidden = true })<CR>', {noremap = true, silent = true})
-
-EOF
 

@@ -132,7 +132,7 @@ repo = 'nvim-lua/plenary.nvim'
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
 depends =  'folke/which-key.nvim'
-hook_post_source = 'source $HOME/.config/nvim/plugin_settings/telescope.vim'
+hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/telescope.lua'
 
 [[plugins]]
 repo = "tpope/vim-fugitive"
