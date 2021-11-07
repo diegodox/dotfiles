@@ -144,6 +144,7 @@ let g:gitgutter_sign_removed = '✘'
 # Never forget key binding
 [[plugins]]
 repo = 'folke/which-key.nvim'
+hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/which_key.lua'
 
 # Undo with tree
 # Call :UndotreeToggle
