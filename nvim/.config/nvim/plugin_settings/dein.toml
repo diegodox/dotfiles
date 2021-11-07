@@ -86,6 +86,16 @@ hook_source = 'nnoremap <silent> <C-g> :LazyGit<CR>'
 # AST for vim
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
+hook_post_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {'rust', 'toml'},
+    highlight = {
+        enable = true,
+    }
+}
+EOF
+'''
 
 # Colorscheme gruvbox
 [[plugins]]
