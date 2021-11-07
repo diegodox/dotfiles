@@ -175,10 +175,9 @@ set undofile
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
-build = '''
-git checkout release
-'''
-hook_add = '''
+build = 'git checkout release'
+hook_post_source = '''
+" extentions for coc.nvim
 let g:coc_global_extensions = [
     \'coc-json',
     \'coc-lightbulb',
@@ -187,6 +186,8 @@ let g:coc_global_extensions = [
     \'coc-texlab',
     \'coc-toml',
     \]
+" load coc settings
+source $HOME/.config/nvim/plugin_settings/coc.vim
 '''
 
 # Telescope CoC integration

@@ -29,10 +29,8 @@ if dein#check_install()
     call dein#install()
 endif
 
-source $HOME/.config/nvim/plugin_settings/coc.vim
 " In Vim initializing, you must call the "hook_post_source" hooks manually
 " in VimEnter if needed.
 autocmd VimEnter * call dein#call_hook('post_source')
 
-" Load general plugin settings
 
