@@ -25,6 +25,18 @@ let g:router_patterns = ['.git']
 # Close buffer keep window layout
 [[plugins]]
 repo = 'rbgrouleff/bclose.vim'
+depends =  'folke/which-key.nvim'
+hook_source = '''
+lua <<EOF
+require("which-key").register({
+    ["<C-w>"] = {
+        name = "colse buffer",
+        ["<C-w>"] = {"<Cmd>Bclose<CR>", "Close buffer"},
+        ["<S-w>"] = {"<Cmd>Bclose!<CR>", "Close buffer without saving" },
+    },
+})
+EOF
+'''
 
 # Better window resizing
 [[plugins]]

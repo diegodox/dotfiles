@@ -36,7 +36,6 @@ autocmd VimEnter * call dein#call_hook('post_source')
 
 " Load general plugin settings
 luafile $HOME/.config/nvim/plugin_settings/which_key.lua
-source $HOME/.config/nvim/plugin_settings/bclose.vim
 source $HOME/.config/nvim/plugin_settings/gruvbox.vim
 source $HOME/.config/nvim/plugin_settings/ranger.vim
 source $HOME/.config/nvim/plugin_settings/winresizer.vim
