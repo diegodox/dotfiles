@@ -37,5 +37,4 @@ autocmd VimEnter * call dein#call_hook('post_source')
 " Load general plugin settings
 source $HOME/.config/nvim/plugin_settings/telescope.vim
 source $HOME/.config/nvim/plugin_settings/lightline.vim
-source $HOME/.config/nvim/plugin_settings/startify.vim
 

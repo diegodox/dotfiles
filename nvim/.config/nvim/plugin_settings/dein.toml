@@ -13,6 +13,7 @@ repo = 'Shougo/dein.vim'
 # Start page
 [[plugins]]
 repo = 'mhinz/vim-startify'
+hook_post_source = 'source $HOME/.config/nvim/plugin_settings/startify.vim'
 
 # Auto change current dir
 [[plugins]]
