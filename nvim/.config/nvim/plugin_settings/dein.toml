@@ -103,6 +103,12 @@ set background=dark
 # Indent visualizer
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+hook_post_source = '''
+let g:indent_guides_exclude_filetypes = ['help']
+hi IndentGuidesOdd  guibg=#53532c ctermbg=58
+hi IndentGuidesEven guibg=#395339 ctermbg=65
+autocmd VimEnter * IndentGuidesEnable
+'''
 
 # Depended by telescope
 [[plugins]]
