@@ -142,3 +142,18 @@ let g:lightline_buffer_minfextlen = 0
 " reserve length for other component (e.g. info, close)
 let g:lightline_buffer_reservelen = 20
 
+" short mode text
+let g:lightline.mode_map = {
+    \ 'n' : 'NOR',
+    \ 'i' : 'INS',
+    \ 'R' : 'REP',
+    \ 'v' : 'VIS',
+    \ 'V' : 'V-L',
+    \ "\<C-v>": 'V-B',
+    \ 'c' : 'CMD',
+    \ 's' : 'SEL',
+    \ 'S' : 'S-L',
+    \ "\<C-s>": 'S-B',
+    \ 't': 'TER',
+    \}
+
