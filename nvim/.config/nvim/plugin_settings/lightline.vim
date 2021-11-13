@@ -125,7 +125,7 @@ let g:lightline_buffer_show_bufnr = 0
 let g:lightline_buffer_fname_mod = ':t'
 
 " hide buffer list
-let g:lightline_buffer_excludes = ['3"']
+let g:lightline_buffer_excludes = []
 
 " max file name length
 let g:lightline_buffer_maxflen = 30

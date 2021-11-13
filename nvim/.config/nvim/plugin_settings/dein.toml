@@ -74,13 +74,8 @@ repo = 'ryanoasis/vim-devicons'
 
 # File manager ranger in vim
 [[plugins]]
-repo =  'iberianpig/ranger-explorer.vim'
-hook_source = '''
-" use ranger when open dir
-let g:ranger_replace_netrw = 1 
-" <C-b> to open ranger
-nnoremap <silent> <C-b> <Cmd>RangerOpenCurrentFile<CR>
-'''
+repo = 'kevinhwang91/rnvimr'
+hook_source = 'source $HOME/.config/nvim/plugin_settings/rnvimr.vim'
 
 # Git TUI lazygit in vim
 [[plugins]]
