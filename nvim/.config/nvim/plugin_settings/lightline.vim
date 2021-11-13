@@ -12,7 +12,7 @@ set noshowmode
 let g:lightline = {
     \ 'tabline': {
     \   'left': [ ['bufferbefore', 'buffercurrent', 'bufferafter' ] ],
-    \  'right': [ ['githead', 'sessionname', 'workingdir'] ],
+    \  'right': [ ['githead'], ['sessionname', 'workingdir'] ],
     \ },
     \ 'active': {
     \   'left': [ ['mode', 'paste'],
