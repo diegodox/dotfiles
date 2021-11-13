@@ -11,7 +11,7 @@ wk.register(
             r = { "<Cmd>Telescope coc references<CR>", "references" },
             l = { "<Cmd>Telescope coc links<CR>", "links" },
             c = { "<Cmd>Telescope coc commands<CR>", "coc commands" },
-            t = { "<Cmd>Telescope coc definitions<CR>", "type definitions" },
+            t = { "<Cmd>Telescope coc type_definitions<CR>", "type definitions" },
             D = { "<Cmd>Telescope coc definitions<CR>", "definitions" },
             d = { "<Cmd>Telescope coc diagnostics<CR>", "diagnostics" },
             s = { "<Cmd>Telescope coc document_symbols<CR>", "document symbols" },
@@ -28,14 +28,17 @@ wk.register(
         r = { "<Cmd>Telescope coc references<CR>", "references" },
         l = { "<Cmd>Telescope coc links<CR>", "links" },
         c = { "<Cmd>Telescope coc commands<CR>", "coc commands" },
-        t = { "<Cmd>Telescope coc definitions<CR>", "type definitions" },
-        D = { "<Cmd>Telescope coc definitions<CR>", "definitions" },
-        d = { "<Cmd>Telescope coc diagnostics<CR>", "diagnostics" },
-        s = { "<Cmd>Telescope coc document_symbols<CR>", "document symbols" },
+        t = { "<Cmd>Telescope coc type_definitions<CR>", "type definitions" },
+        d = { "<Cmd>Telescope coc definitions<CR>", "definitions" },
         a = { "<Cmd>Telescope coc code_actions<CR>", "code actions" },
     },
     {
         prefix = "g"
     }
-
+)
+wk.register(
+    {
+        name = "jump",
+        ["<C-a>"] = { "<Cmd>Telescope coc code_actions<CR>", "code actions" },
+    }
 )
