@@ -25,7 +25,7 @@ let g:lightline = {
     \     'left': [ ['filepath','modified'],
     \               ['cocdiagnostic']
     \             ],
-    \    'right': [ ['gitgutter'], ['filetype'] ]
+    \    'right': [ ['gitgutter'] ]
     \ },
     \ 'component_expand': {
     \   'buffercurrent': 'lightline#buffer#buffercurrent',
