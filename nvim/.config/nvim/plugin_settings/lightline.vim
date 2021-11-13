@@ -19,13 +19,13 @@ let g:lightline = {
     \             ['readonly', 'filepath', 'modified'],
     \             ['cocstatus', 'currentfunction']
     \           ],
-    \  'right': [ ['gitgutter'] ]
+    \  'right': [ ['gitgutter'], ['filetype'] ]
     \ },
     \ 'inactive': {
     \     'left': [ ['filepath','modified'],
     \               ['cocdiagnostic']
     \             ],
-    \    'right': [ ['gitgutter'] ]
+    \    'right': [ ['gitgutter'], ['filetype'] ]
     \ },
     \ 'component_expand': {
     \   'buffercurrent': 'lightline#buffer#buffercurrent',
