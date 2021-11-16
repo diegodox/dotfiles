@@ -20,6 +20,18 @@ if status is-interactive
     if command -v bat >/dev/null
         abbr -a cat bat
     end
+
+    if test "$NVIM_LISTEN_ADDRESS"
+        alias nvim="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+        set -x VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+        set -x EDITOR="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    end
+    if command -v nvim >/dev/null
+        abbr -a vim nvim
+        abbr -a v nvim
+    end
+
+    set -x EDITOR nvim
 end
 
 set PATH ~/.cargo/bin $PATH

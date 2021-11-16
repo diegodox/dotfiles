@@ -80,7 +80,12 @@ hook_source = 'source $HOME/.config/nvim/plugin_settings/rnvimr.vim'
 # Git TUI lazygit in vim
 [[plugins]]
 repo = 'kdheepak/lazygit.nvim'
-hook_source = 'nnoremap <silent> <C-g> :LazyGit<CR>'
+hook_source = '''
+if has('nvim') && executable('nvr')
+  let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+endif
+nnoremap <silent> <C-g> :LazyGit<CR>
+'''
 
 # AST for vim
 [[plugins]]
