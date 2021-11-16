@@ -191,8 +191,8 @@ bindsym $mod+Shift+g move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 
 # resize
-bindsym $mod+Ctrl+h exec ~/.config/i3/i3_smart_resize "Left" 
-bindsym $mod+Ctrl+j exec ~/.config/i3/i3_smart_resize "Down" 
-bindsym $mod+Ctrl+k exec ~/.config/i3/i3_smart_resize "Up" 
-bindsym $mod+Ctrl+l exec ~/.config/i3/i3_smart_resize "Right" 
+bindsym $mod+Ctrl+h exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Left" 
+bindsym $mod+Ctrl+j exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Down" 
+bindsym $mod+Ctrl+k exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Up" 
+bindsym $mod+Ctrl+l exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Right" 
 

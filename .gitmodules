@@ -4,3 +4,6 @@
 [submodule "rofi/.config/rofi/rofi_scripts"]
 	path = rofi/.config/rofi/rofi_scripts
 	url = git@github.com:diegodox/rofi.git
+[submodule "i3/.config/i3/helpers-for-i3"]
+	path = i3/.config/i3/helpers-for-i3
+	url = git@github.com:diegodox/helpers-for-i3.git
