@@ -180,6 +180,7 @@ bindsym $mod+s workspace $ws2
 bindsym $mod+d workspace $ws3
 bindsym $mod+f workspace $ws4
 bindsym $mod+g workspace $ws5
+bindsym $mod+6 workspace $ws6
 
 # move focused container to workspace
 bindsym $mod+Shift+a move container to workspace $ws1
@@ -187,6 +188,7 @@ bindsym $mod+Shift+s move container to workspace $ws2
 bindsym $mod+Shift+d move container to workspace $ws3
 bindsym $mod+Shift+f move container to workspace $ws4
 bindsym $mod+Shift+g move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
 
 # resize
 bindsym $mod+Ctrl+h exec ~/.config/i3/i3_smart_resize "Left" 
