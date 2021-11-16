@@ -1,3 +1,6 @@
 [submodule "i3/.config/i3blocks/i3blocks-contrib"]
 	path = i3/.config/i3blocks/i3blocks-contrib
 	url = git@github.com:vivien/i3blocks-contrib.git
+[submodule "ranger/.config/ranger/plugins/ranger_devicons"]
+	path = ranger/.config/ranger/plugins/ranger_devicons
+	url = git@github.com:alexanderjeurissen/ranger_devicons.git
