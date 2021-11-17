@@ -112,7 +112,7 @@ set $mod Mod4
 # restart i3
 bindsym $mod+Ctrl+r restart
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+q exec ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Ctrl+q exec ~/.config/rofi/rofi_scripts/1080p/powermenu/powermenu.sh
 
 # -----------------------------------------------------------------------------
 # application key bind
