@@ -65,11 +65,11 @@ depends = 'folke/which-key.nvim'
 hook_post_source = '''
 lua <<EOF
 require("which-key").register({
-    ["<C-w>"] = { x = { "<Cmd>WinShift swap<CR>", "swap current window" } },
-    ["<C-M-h>"] = { "<Cmd>WinShift left<CR>", "move current window to left" },
-    ["<C-M-j>"] = { "<Cmd>WinShift down<CR>", "move current window to down" },
-    ["<C-M-k>"] = { "<Cmd>WinShift up<CR>", "move current window to up" },
-    ["<C-M-l>"] = { "<Cmd>WinShift right<CR>", "move current window to right" },
+    ["<C-w>"] = { x = { "<Cmd>WinShift swap<CR>", "Swap current window" } },
+    ["<C-M-h>"] = { "<Cmd>WinShift left<CR>", "Move current window to left" },
+    ["<C-M-j>"] = { "<Cmd>WinShift down<CR>", "Move current window to down" },
+    ["<C-M-k>"] = { "<Cmd>WinShift up<CR>", "Move current window to up" },
+    ["<C-M-l>"] = { "<Cmd>WinShift right<CR>", "Move current window to right" },
 })
 EOF
 '''
