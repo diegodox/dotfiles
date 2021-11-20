@@ -25,15 +25,16 @@ let g:router_patterns = ['.git']
 
 # Close buffer keep window layout
 [[plugins]]
-repo = 'rbgrouleff/bclose.vim'
-depends =  'folke/which-key.nvim'
+repo = 'diegodox/close-buffers.nvim'
+depends = 'folke/which-key.nvim'
 hook_source = '''
 lua <<EOF
 require("which-key").register({
     ["<C-w>"] = {
         name = "colse buffer",
-        ["<C-w>"] = {"<Cmd>Bclose<CR>", "Close buffer"},
-        ["<S-w>"] = {"<Cmd>Bclose!<CR>", "Close buffer without saving" },
+        ["<C-a>"] = {"<Cmd>lua require('close_buffers').delete({ type = 'hidden' })<CR>", "Delete all non-visible buffers"},
+        ["<C-w>"] = {"<Cmd>lua require('close_buffers').delete({ type = 'this' })<CR>", "Delete current buffer"},
+        ["<S-w>"] = {"<Cmd>lua require('close_buffers').delete({ type = 'this', force = true })<CR>", "Force delete current buffer"},
     },
 })
 EOF
