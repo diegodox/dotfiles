@@ -31,7 +31,7 @@ hook_source = '''
 lua <<EOF
 require("which-key").register({
     ["<C-w>"] = {
-        name = "colse buffer",
+        name = "Close buffer",
         ["<C-a>"] = {"<Cmd>lua require('close_buffers').delete({ type = 'hidden' })<CR>", "Delete all non-visible buffers"},
         ["<C-w>"] = {"<Cmd>lua require('close_buffers').delete({ type = 'this' })<CR>", "Delete current buffer"},
         ["<S-w>"] = {"<Cmd>lua require('close_buffers').delete({ type = 'this', force = true })<CR>", "Force delete current buffer"},
