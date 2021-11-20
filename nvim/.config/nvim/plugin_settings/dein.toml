@@ -58,6 +58,22 @@ nnoremap <silent> <M-k> :silent WinResizerStartResize<CR>k<Esc>
 nnoremap <silent> <M-l> :silent WinResizerStartResize<CR>l<Esc>
 '''
 
+# Better window swapping
+[[plugins]]
+repo = 'sindrets/winshift.nvim'
+depends = 'folke/which-key.nvim'
+hook_post_source = '''
+lua <<EOF
+require("which-key").register({
+    ["<C-w>"] = { x = { "<Cmd>WinShift swap<CR>", "swap current window" } },
+    ["<C-M-h>"] = { "<Cmd>WinShift left<CR>", "move current window to left" },
+    ["<C-M-j>"] = { "<Cmd>WinShift down<CR>", "move current window to down" },
+    ["<C-M-k>"] = { "<Cmd>WinShift up<CR>", "move current window to up" },
+    ["<C-M-l>"] = { "<Cmd>WinShift right<CR>", "move current window to right" },
+})
+EOF
+'''
+
 # Cool status bar
 [[plugins]]
 repo = 'itchyny/lightline.vim'
