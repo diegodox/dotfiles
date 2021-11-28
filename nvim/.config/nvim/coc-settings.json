@@ -8,10 +8,23 @@
     "suggest.enablePreselect": true,
     "coc.source.around.enable": false,
     "coc.source.buffer.enable": false,
-    "coc.preferences.formatOnSaveFiletypes": ["rust"],
+    "coc.preferences.formatOnSaveFiletypes": ["rust", "cpp"],
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
     "rust-analyzer.inlayHints.refreshOnInsertMode": true,
     "rust-analyzer.checkOnSave.command": "clippy",
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "ccls": { "extraArgs": ["--log-file=/tmp/ccls.log", "-v=1"] },
+                "clang": { "extraArgs": ["-std=c++17"] },
+                "cache": { "directory": "/tmp/ccls" },
+                "highlight": { "lsRanges" : true }
+            }
+        }
+    },
     "lightbulb.enableSign": true,
     "lightbulb.signText": "💡",
     "lightbulb.enableVirtualText": false
