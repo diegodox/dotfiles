@@ -19,13 +19,13 @@ let g:lightline = {
     \             ['readonly', 'filepath', 'modified'],
     \             ['cocstatus', 'currentfunction']
     \           ],
-    \  'right': [ ['gitgutter'], ['filetype'] ]
+    \  'right': [ ['gitsign'], ['filetype'] ]
     \ },
     \ 'inactive': {
     \     'left': [ ['filepath','modified'],
     \               ['cocdiagnostic']
     \             ],
-    \    'right': [ ['gitgutter'] ]
+    \    'right': [ ['gitsign'] ]
     \ },
     \ 'component_expand': {
     \   'buffercurrent': 'lightline#buffer#buffercurrent',
@@ -43,7 +43,7 @@ let g:lightline = {
     \   'filepath': 'FilePath',
     \   'sessionname': 'SessionName',
     \   'githead': 'FugitiveHead',
-    \   'gitgutter': 'LightGitGutter',
+    \   'gitsign': 'LightGitSign',
     \   'cocstatus': 'coc#status',
     \   'cocdiagnostic': 'CocDiagnostic',
     \   'currentfunction': 'CocCurrentFunction',
@@ -67,25 +67,11 @@ function! SessionName()
     return fnamemodify(v:this_session, ':t')
 endfunction
 
-function! LightGitGutter()
-    if ! exists('*GitGutterGetHunkSummary')
-        \ || ! get(g:, 'gitgutter_enabled', 0)
-        \ || winwidth('.') <= 60
-        return ''
-    endif
-    let symbols = [
-        \ g:gitgutter_sign_added,
-        \ g:gitgutter_sign_modified,
-        \ g:gitgutter_sign_removed
-        \ ]
-    let hunks = GitGutterGetHunkSummary()
-    let ret = []
-    for i in [0, 1, 2]
-        if hunks[i] > 0
-            call add(ret, symbols[i] . hunks[i])
-        endif
-    endfor
-    return join(ret, ' ')
+function! LightGitSign()
+    if winwidth('.') <= 60 | return '' | endif
+    let info = get(b:, 'gitsigns_status', {})
+    if empty(info) | return '' | endif
+    return info
 endfunction
 
 function! CocDiagnostic() abort
