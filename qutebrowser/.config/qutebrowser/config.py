@@ -206,7 +206,15 @@ c.auto_save.session = True
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://google.com/search?q={}'}
+c.url.searchengines = {
+    'DEFAULT': 'https://google.com/search?q={}',
+    'google': 'https://google.com/search?q={}',
+    'wikiwand': 'https://www.wikiwand.com/ja/{}?fullSearch=true',
+    'archwiki': 'https://wiki.archlinux.org/?search={}',
+    'ruststd': 'https://doc.rust-lang.org/std/?search={}',
+    'youtube': 'https://www.youtube.com/results?search_query={}',
+    'translate': 'https://translate.google.co.jp/?hl=ja&sl=auto&tl=ja&op=translate&text={}'
+}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
