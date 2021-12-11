@@ -245,6 +245,13 @@ c.fonts.web.family.fixed = 'Hack Nerd Font'
 c.fonts.web.family.sans_serif = 'Hack Nerd Font'
 c.fonts.web.family.serif = 'Hack Nerd Font'
 
+# Zoom 2x in by default, my prefer on this system.
+c.zoom.default = '200%'
+# Zoom levels should have more steps around default zoom level.
+c.zoom.levels = ['25%', '50%', '75%', '90%', '100%', '110%', '125%', '150%'\
+        ,'175%', '190%', '200%', '210%', '225%', '250%', '275%', '300%'\
+        ,'350%', '400%', '500%']
+
 # Enable lazy restoring sessions.
 # Load a restored tab as soon as it takes focus.
 c.session.lazy_restore = True
