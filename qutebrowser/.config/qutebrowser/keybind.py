@@ -4,6 +4,13 @@ def bind_chained(key, *commands):
 
 # Disable `d`(close tab) to prevent unintentional closing of tab, use `<Ctrl-w>` instead.
 config.bind('d', 'nop')
+# Disable `<Ctrl-q>` to prevent accidental quitting of qutebrowser, use `:qa` instead.
+config.bind('<Ctrl-q>', 'nop')
+
+# Search
+config.bind('/', 'set-cmd-text -s :search')
+# Unfocus input field when leave insert mode.
+config.bind('<Escape>', 'mode-leave ;; jseval -q document.activeElement.blur()', mode='insert')
 
 # Toggle tab/status bar
 config.bind('<Ctrl+b>', 'config-cycle tabs.show always never')
@@ -17,9 +24,11 @@ config.bind('<Ctrl+l>', 'forward')
 
 # Chrome-like keybindings
 config.bind('<Ctrl+n>', 'open -t')
+config.bind('<Shift+n>', 'open -w')
 config.bind('<Ctrl+o>', 'set-cmd-text -s :open -t ')
-config.bind('<Ctrl+s>', 'set-cmd-text -s :search')
+config.bind('<Shift+o>', 'set-cmd-text -s :open -w ')
 config.bind('<Ctrl+f>', 'hint all tab')
+config.bind('<Shift+f>', 'hint all window')
 
 # Open MPV
 config.bind('<Shift+m>', 'spawn mpv {url}')
