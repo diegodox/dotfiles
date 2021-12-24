@@ -141,8 +141,8 @@ font-3 = Siji:pixelsize=13;1
 ;   modules-right = ipc clock
 
 modules-left = i3
-modules-center = xwindow
-modules-right = spotify filesystem cpu memory pulseaudio eth date
+modules-center = i3layout xwindow
+modules-right = spotify filesystem cpu temperature memory pulseaudio eth date
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
