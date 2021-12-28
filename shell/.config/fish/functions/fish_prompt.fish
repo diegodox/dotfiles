@@ -18,8 +18,8 @@ function fish_prompt
     set_color brblack
     echo -n "["(date "+%H:%M")"]"
 
+    set_color normal
     set_color $exit_status_color
-    set_color -b black
     echo -ne \uE0B6
 
     set_color -b $exit_status_color
@@ -44,8 +44,8 @@ function fish_prompt
     set_color -b $pwd_bg_color
     echo -ns (prompt_pwd)
 
+    set_color normal
     set_color $pwd_bg_color
-    set_color -b black
     echo -ne \uE0B4
 
     set_color $git_tx_color
