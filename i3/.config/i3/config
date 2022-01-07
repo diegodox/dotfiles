@@ -91,13 +91,13 @@ exec_always --no-startup-id picom
 exec_always --no-startup-id fcitx5
 
 # set background
-exec feh --bg-scale ~/.wallpaper/share_bg/archlinux/wild.png
+exec --no-startup-id feh --bg-scale ~/.wallpaper/share_bg/archlinux/wild.png
 
 # start spotify
-exec spotify
+exec --no-startup-id spotify
 
 # start slack
-exec slack
+exec --no-startup-id slack
 
 # -----------------------------------------------------------------------------
 # KEY BINDING
@@ -198,8 +198,8 @@ bindsym $mod+Shift+g move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 
 # resize
-bindsym $mod+Ctrl+h exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Left" 
-bindsym $mod+Ctrl+j exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Down" 
-bindsym $mod+Ctrl+k exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Up" 
-bindsym $mod+Ctrl+l exec ~/.config/i3/helpers-for-i3/i3-smart-resize "Right" 
+bindsym $mod+Ctrl+h exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Left"
+bindsym $mod+Ctrl+j exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Down"
+bindsym $mod+Ctrl+k exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Up"
+bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Right"
 
