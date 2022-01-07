@@ -138,6 +138,10 @@ handle_image() {
         #           - "${IMAGE_CACHE_PATH}" < "${FILE_PATH}" \
         #           && exit 6 || exit 1;;
 
+        ## PNM(pbm, pgm, ppm)
+        image/image/x-portable-bitmap||x-portable-graymap||image/x-portable-pixmap)
+                convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
+
         ## Image
         image/*)
             local orientation
@@ -147,6 +151,8 @@ handle_image() {
             if [[ -n "$orientation" && "$orientation" != 1 ]]; then
                 ## ...auto-rotate the image according to the EXIF data.
                 convert -- "${FILE_PATH}" -auto-orient "${IMAGE_CACHE_PATH}" && exit 6
+            else
+                convert -- "${FILE_PATH}" "${IMAGE_CACHE_PATH}" && exit 6
             fi
 
             ## `w3mimgdisplay` will be called for all images (unless overriden
