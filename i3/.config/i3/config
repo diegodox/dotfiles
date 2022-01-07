@@ -111,6 +111,7 @@ set $mod Mod4
 
 # restart i3
 bindsym $mod+Ctrl+r restart
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+q exec ~/.config/rofi/rofi_scripts/1080p/powermenu/powermenu.sh
 
@@ -129,6 +130,12 @@ bindsym $mod+p exec --no-startup-id "rofi -show drun -sidebar-mode -modi 'run,ss
 
 # start qutebrowser
 bindsym $mod+q exec qutebrowser
+
+# start editor
+bindsym --release $mod+e exec neovide
+
+# dunst context menu
+bindsym $mod+period exec dunstctl context
 
 # -----------------------------------------------------------------------------
 # workspace/container/window/layout key bind
@@ -166,7 +173,7 @@ bindsym $mod+t layout toggle split
 bindsym $mod+Ctrl+f floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Tab focus mode_toggle
 
 # focus the parent container
 bindsym $mod+u focus parent
