@@ -51,8 +51,17 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 nmap <silent> g[ <Plug>(coc-diagnostic-prev)
 nmap <silent> g] <Plug>(coc-diagnostic-next)
 
-" Use Ctrl + h to show documentation in preview window.
-nnoremap <silent> <Space>k :call <SID>show_jump_documentation()<CR>
+" Use `<space>k` to show documentation in preview window.
+lua <<EOF
+require('which-key').register(
+    {
+        k = { "<Cmd>call <SID>show_jump_documentation()<CR>", "hover documentation" },
+    },
+    {
+        prefix = "<Space>"
+    }
+)
+EOF
 
 function! s:show_jump_documentation()
     if (coc#float#has_float())
