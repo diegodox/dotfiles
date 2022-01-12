@@ -14,9 +14,14 @@ require("telescope").setup {
             ".git/.*",
             ".npm/.*"
         },
+        pickers = {
+            live_grep = {
+                hidden = false
+            }
+        },
         preview = {
             filesize_limit = 10
-        }
+        },
     },
 }
 
