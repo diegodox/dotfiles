@@ -76,9 +76,8 @@ EOF
 
 # Cool status bar
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-depends = ['taohexxx/lightline-buffer', 'tpope/vim-fugitive', 'lewis6991/gitsigns.nvim']
-hook_source = 'source $HOME/.config/nvim/plugin_settings/lightline.vim'
+repo = 'nvim-lualine/lualine.nvim'
+hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/lualine.lua'
 
 # Tabline(buffer list on top) for lightline
 [[plugins]]
