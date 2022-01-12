@@ -32,3 +32,8 @@ set smartcase
 set scrolloff=5
 set signcolumn=yes
 
+" ----------------
+" guivim settings
+" ----------------
+set guifont=Hack\ Nerd\ Font,Noto\ Sans\ Mono\ CJK\ JP:h13
+
