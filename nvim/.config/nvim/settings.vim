@@ -21,7 +21,7 @@ set autoindent
 set number relativenumber
 set clipboard=unnamedplus " Copy paste with system clipboard
 set updatetime=300 " Faster completion
-set noshowmode " Airline can show mode
+set noshowmode " Prefer mode on status line
 set mouse=a
 set iskeyword+=- " Treat dash separatd words as a word text object
 set colorcolumn=80
@@ -30,7 +30,13 @@ set nowrap
 set ignorecase
 set smartcase
 set scrolloff=5
+set sidescrolloff=5
 set signcolumn=yes
+set winfixwidth
+set winfixheight
+set list
+set listchars=tab:▸\ ,trail:·
+set termguicolors
 
 " ----------------
 " guivim settings
