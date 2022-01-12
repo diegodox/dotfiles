@@ -33,9 +33,11 @@ wk.register(
             name = "telescope", -- optional group name
             b = { "<Cmd>Telescope buffers<CR>", "List buffers" },
             ["<C-b>"] = { "<Cmd>Telescope builtin<CR>", "List telescope buitin" },
-            f = { "<Cmd>Telescope find_files<CR>", "Find File" }, -- create a binding with label
-            g = { "<Cmd>Telescope live_grep<CR>", "Grep Line" }, -- create a binding with label
-            r = { "<Cmd>Telescope oldfiles<CR>", "Open Recent File" }, -- additional options for creating the keymap
+            f = { "<Cmd>Telescope find_files<CR>", "Find File" },
+            g = { "<Cmd>Telescope live_grep<CR>", "Grep Line" },
+            ["<C-g>"] = { "<Cmd>Telescope git_files<CR>", "Git files" },
+            r = { "<Cmd>Telescope oldfiles<CR>", "Open Recent File" },
+            k = { "<Cmd>Telescope keymaps<CR>", "Key Map" },
         },
     },
     {
