@@ -44,3 +44,9 @@ nnoremap <right> <nop>
 nnoremap k gk
 nnoremap j gj
 
+" Disable IME with <Esc>
+nnoremap <silent> <Esc> <cmd>silent call system('fcitx5-remote -o > /dev/null 2>&1')<CR><Esc>
+inoremap <silent> <Esc> <cmd>silent call system('fcitx5-remote -o > /dev/null 2>&1')<CR><Esc>
+
+" Open file in split window
+nnoremap gF <C-w>F
