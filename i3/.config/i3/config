@@ -20,7 +20,7 @@ workspace_layout tabbed
 smart_borders on
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 5
+new_window pixel 3
 new_float normal
 
 # Hide borders
