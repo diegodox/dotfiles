@@ -2,10 +2,10 @@ if status is-interactive
 
     # aliaces
     if command -v exa >/dev/null
-        abbr -a ls 'exa --header --icons --git'
-        abbr -a ll 'exa --header --icons --git --long'
-        abbr -a la 'exa --header --icons --git --all'
-        abbr -a lla 'exa --header --icons --git --long --all'
+        abbr -a ls 'exa --icons'
+        abbr -a ll 'exa --icons --header --git --long'
+        abbr -a la 'exa --icons --all'
+        abbr -a lla 'exa --icons --header --git --long --all'
     else
         abbr -a ll 'ls -l'
         abbr -a la 'ls -a'
