@@ -26,6 +26,6 @@ else
             eval "${command_list[$i]} &> /dev/null"
             break
         fi
-        notify-send "Error: i3_rofi.sh" "No such command: $*"
+        echo "Internal Error: i3_rofi.sh" "No such command: $*"
     done
 fi
