@@ -2,6 +2,7 @@ configuration {
     show-icons: true;
     font: "Hack Nerd Font 16";
     icon-theme: "Papirus";
+    modi: "run,drun,i3:~/.config/rofi/i3_rofi.sh";
 }
 
 @theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
