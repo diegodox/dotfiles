@@ -5,22 +5,43 @@
 
 status_file=/tmp/rofi-i3-status
 
-command_label_list=(
-    "Toggle Border"
-    "Toggle Sticky (Floating Only)"
-    "Focus Workspace"
-    "Move window to Workspace"
-    "Rename Workspace"
+action_list=(
+    "Scratchpad action"
+    "Workspace action"
+    "Window action"
 )
 
-initial_state() {
+action_selected() {
     case "$*" in
-        "Toggle Border")
-            i3-msg -t command 'border toggle' &> /dev/null
+        "Workspace action")
+            echo "Workspace action" > "$status_file"
+            for label in "${workspace_action_list[@]}"; do
+                echo "$label"
+            done
             ;;
-        "Toggle Sticky (Floating Only)")
-            i3-msg -t command 'sticky toggle' &> /dev/null
+        "Window action")
+            echo "Window action" > "$status_file"
+            for label in "${window_action_list[@]}"; do
+                echo "$label"
+            done
             ;;
+        "Scratchpad action")
+            echo "Scratchpad action" > "$status_file"
+            echo "Send this window to Scratchpad"
+            i3-msg -t get_tree | jq '.nodes[] | .nodes[] | .nodes[] | select(.name=="__i3_scratch") | .floating_nodes[] | .nodes[] | (.name)' \
+                | sed 's/^"\(.*\)"$/\1/'
+            ;;
+    esac
+}
+
+workspace_action_list=(
+    "Send window to Workspace"
+    "Rename Workspace"
+    "Focus Workspace"
+)
+
+workspace_action() {
+    case "$*" in
         "Focus Workspace")
             echo "Focus Workspace" > "$status_file"
             echo "next"
@@ -28,7 +49,7 @@ initial_state() {
             echo "back_and_forth"
             i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
             ;;
-        "Move window to Workspace")
+        "Send window to Workspace")
             echo "Move window to Workspace" > "$status_file"
             echo "next"
             echo "prev"
@@ -40,8 +61,33 @@ initial_state() {
             echo "current"
             i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
             ;;
-        *)
-            # echo "Internal Error: i3_rofi.sh" "No such command in initial_state: $*"
+    esac
+}
+
+window_action_list=(
+    "Send to Workspace"
+    "Send to Scratchpad"
+    "Toggle Border"
+    "Toggle Sticky (Floating Only)"
+)
+
+window_action() {
+    case "$*" in
+        "Send to Workspace")
+            echo "Move window to Workspace" > "$status_file"
+            echo "next"
+            echo "prev"
+            echo "back_and_forth"
+            i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
+            ;;
+        "Send to Scratchpad")
+            i3-msg -t command "move scratchpad" &> /dev/null
+            ;;
+        "Toggle Border")
+            i3-msg -t command 'border toggle' &> /dev/null
+            ;;
+        "Toggle Sticky (Floating Only)")
+            i3-msg -t command 'sticky toggle' &> /dev/null
             ;;
     esac
 }
@@ -53,12 +99,28 @@ elif [[ -z "$*" ]]; then
     # Initialize internal status file
     echo "" > "$status_file"
     # No arguments are passed, so display the menu.
-    for command_label in "${command_label_list[@]}"; do
+    for command_label in "${action_list[@]}"; do
         echo "$command_label"
     done
 else
     # Some arguments passed, then find how to treat them by internal state.
     case $(cat "$status_file") in
+        "Workspace action")
+            workspace_action "$*"
+            ;;
+        "Window action")
+            window_action "$*"
+            ;;
+        "Scratchpad action")
+            case $* in
+                "" | "Send this window to Scratchpad")
+                    i3-msg -t command "move scratchpad" &> /dev/null
+                    ;;
+                *)
+                    i3-msg -t command "[title=\"*$**\"] scratchpad show" &> /dev/null
+                    ;;
+            esac
+            ;;
         "Focus Workspace")
             i3-msg workspace "$*" &> /dev/null
             ;;
@@ -81,7 +143,7 @@ else
             esac
             ;;
         *)
-            initial_state "$*"
+            action_selected "$*"
             ;;
     esac
 fi
