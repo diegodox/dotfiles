@@ -10,6 +10,7 @@ command_label_list=(
     "Toggle Sticky (Floating Only)"
     "Focus Workspace"
     "Move window to Workspace"
+    "Rename Workspace"
 )
 
 initial_state() {
@@ -32,6 +33,11 @@ initial_state() {
             echo "next"
             echo "prev"
             echo "back_and_forth"
+            i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
+            ;;
+        "Rename Workspace")
+            echo "Rename Workspace" > "$status_file"
+            echo "current"
             i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
             ;;
         *)
@@ -58,6 +64,22 @@ else
             ;;
         "Move window to Workspace")
             i3-msg move container to workspace "$*" &> /dev/null
+            ;;
+        "Rename Workspace")
+            echo "Rename Workspace selected: $*" > "$status_file"
+            cat "$status_file"
+            echo "Type new workspace name"
+            ;;
+        "Rename Workspace selected: "*)
+            prev_workspace_name=$(sed 's/Rename Workspace selected: //' < "$status_file")
+            case $prev_workspace_name in
+                "current")
+                    i3-msg -t command "rename workspace to \"$*\"" &> /dev/null
+                    ;;
+                *)
+                    i3-msg -t command "rename workspace \"$prev_workspace_name\" to \"$*\"" &> /dev/null
+                    ;;
+            esac
             ;;
         *)
             initial_state "$*"
