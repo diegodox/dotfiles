@@ -67,8 +67,7 @@ else
             ;;
         "Rename Workspace")
             echo "Rename Workspace selected: $*" > "$status_file"
-            cat "$status_file"
-            echo "Type new workspace name"
+            echo "Type new workspace name for workspace: $*"
             ;;
         "Rename Workspace selected: "*)
             prev_workspace_name=$(sed 's/Rename Workspace selected: //' < "$status_file")
