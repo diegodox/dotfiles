@@ -22,10 +22,16 @@ initial_state() {
             ;;
         "Focus Workspace")
             echo "Focus Workspace" > "$status_file"
+            echo "next"
+            echo "prev"
+            echo "back_and_forth"
             i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
             ;;
         "Move window to Workspace")
             echo "Move window to Workspace" > "$status_file"
+            echo "next"
+            echo "prev"
+            echo "back_and_forth"
             i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
             ;;
         *)
