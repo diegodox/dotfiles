@@ -117,7 +117,8 @@ else
                     i3-msg -t command "move scratchpad" &> /dev/null
                     ;;
                 *)
-                    i3-msg -t command "[title=\"*$**\"] scratchpad show" &> /dev/null
+                    id=$(i3-msg -t get_tree | jq ".nodes[] | .nodes[] | .nodes[] | select(.name==\"__i3_scratch\") | .floating_nodes[] | .nodes[] | select(.name==\"$*\") | (.id)")
+                    i3-msg -t command "[con_id=\"$id\"] scratchpad show" &> /dev/null
                     ;;
             esac
             ;;
