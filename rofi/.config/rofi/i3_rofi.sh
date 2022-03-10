@@ -24,6 +24,15 @@ action_selected() {
             for label in "${window_action_list[@]}"; do
                 echo "$label"
             done
+            floating_status=$(i3-msg -t get_tree | jq -r 'recurse | select(.focused?) | .floating')
+            case "$floating_status" in
+                "user_on" | "auto_on")
+                    for label in "${floating_window_action_list[@]}"; do
+                        echo "$label"
+                    done
+                    ;;
+                *) ;;
+            esac
             ;;
         "Scratchpad action")
             echo "Scratchpad action" > "$status_file"
@@ -68,7 +77,9 @@ window_action_list=(
     "Send to Workspace"
     "Send to Scratchpad"
     "Toggle Border"
-    "Toggle Sticky (Floating Only)"
+)
+floating_window_action_list=(
+    "Toggle Sticky"
 )
 
 window_action() {
