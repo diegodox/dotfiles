@@ -239,5 +239,10 @@ repo = 'github/copilot.vim'
 # Cargo.toml support
 [[plugins]]
 repo = 'saecki/crates.nvim'
-hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/crates.lua'
+depends = 'nvim-lua/plenary.nvim'
+hook_post_source = '''
+lua <<EOF
+require('crates').setup()
+EOF
+'''
 
