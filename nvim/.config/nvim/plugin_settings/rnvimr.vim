@@ -2,8 +2,8 @@
 " rnvimr ranger file manager settings
 " -----------------------------------------------------------------------------
 
-" <C-b> to open ranger
-nnoremap <silent> <C-b> <Cmd>RnvimrToggle<CR>
+" <C-b> to open ranger in proper size(rnvimr_ranger_views[1])
+nnoremap <silent> <C-b> <Cmd>RnvimrToggle<CR><Cmd>RnvimrResize 1<CR>
 
 " Link CursorLine into RnvimrNormal highlight in the Floating window
 highlight link RnvimrNormal CursorLine
