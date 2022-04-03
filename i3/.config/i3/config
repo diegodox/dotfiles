@@ -75,6 +75,7 @@ assign [class="zoom"] $ws_zoom
 for_window [class="zoom"] floating enable
 for_window [class="VirtualBox Machine"] floating enable
 for_window [class="mpv"] floating enable
+for_window [title="Picture-in-Picture"] border none
 
 # Never focus zoom window, since zoom does't give appropriate X window property.
 no_focus [class="zoom"]
