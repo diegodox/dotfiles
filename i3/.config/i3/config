@@ -74,7 +74,7 @@ assign [class="zoom"] $ws_zoom
 # window to be float on default
 for_window [class="zoom"] floating enable
 for_window [class="mpv"] floating enable
-for_window [title="Picture-in-Picture"] border none
+for_window [title="Picture-in-Picture"] border pixel 2
 
 # Never focus zoom window, since zoom does't give appropriate X window property.
 no_focus [class="zoom"]
