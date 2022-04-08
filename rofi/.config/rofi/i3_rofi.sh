@@ -45,6 +45,7 @@ action_selected() {
 
 workspace_action_list=(
     "Send window to Workspace"
+    "Switch Monitor"
     "Rename Workspace"
     "Focus Workspace"
 )
@@ -57,6 +58,9 @@ workspace_action() {
             echo "prev"
             echo "back_and_forth"
             i3-msg -t get_workspaces | jq -r '.[] | "\(.name)"'
+            ;;
+        "Switch Monitor")
+            i3-msg -t command move workspace to output next &> /dev/null
             ;;
         "Send window to Workspace")
             echo "Move window to Workspace" > "$status_file"
