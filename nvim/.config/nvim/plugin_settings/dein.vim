@@ -13,9 +13,14 @@ endif
 
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 let s:toml = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+let s:cui_toml = fnamemodify(expand('<sfile>'), ':h').'/cui_plugin.toml'
 if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
     call dein#load_toml(s:toml)
+    " Add cui plugins if running in cui
+    if !has('gui_running')
+        call dein#load_toml(s:cui_toml)
+    endif
     call dein#end()
     call dein#save_state()
 endif
@@ -33,4 +38,4 @@ endif
 " in VimEnter if needed.
 autocmd VimEnter * call dein#call_hook('post_source')
 
-
+colorscheme codedark

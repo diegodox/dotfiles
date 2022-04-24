@@ -79,14 +79,50 @@ EOF
 repo = 'nvim-lualine/lualine.nvim'
 hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/lualine.lua'
 
-# Tabline(buffer list on top) for lightline
 [[plugins]]
-repo = 'taohexxx/lightline-buffer'
-depends = 'ryanoasis/vim-devicons'
+repo = 'kyazdani42/nvim-web-devicons'
 
-# File type icon for lightline-buffer
+# Buffer list on top
+[[plugins]]
+repo = 'akinsho/bufferline.nvim'
+depends = 'kyazdani42/nvim-web-devicons'
+hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/bufferline.lua'
+
+# Comment/uncomment
+[[plugins]]
+repo = 'numToStr/Comment.nvim'
+hook_source = '''
+lua <<EOF
+require("Comment").setup()
+EOF
+'''
+
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+
+# File tree
+[[plugins]]
+repo = 'kyazdani42/nvim-tree.lua'
+depends = ['kyazdani42/nvim-web-devicons', 'folke/which-key.nvim']
+hook_post_source = '''
+lua <<EOF
+vim.g.nvim_tree_respect_buf_cwd = 1
+require'nvim-tree'.setup {
+    hijack_netrw        = false,
+}
+require('which-key').register({
+    ["<C-t>"] = { "<Cmd>NvimTreeToggle<CR>", "ToggleTree" }
+})
+require('which-key').register(
+    {
+        ["<C-t>"] = { "<Cmd>NvimTreeToggle<CR>", "ToggleTree" }
+    },
+    {
+        prefix = "<Space>",
+    }
+)
+EOF
+'''
 
 # File manager ranger in vim
 [[plugins]]
@@ -98,7 +134,7 @@ hook_source = 'source $HOME/.config/nvim/plugin_settings/rnvimr.vim'
 repo = 'kdheepak/lazygit.nvim'
 hook_source = '''
 if has('nvim') && executable('nvr')
-  let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
+    let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 nnoremap <silent> <C-g> :LazyGit<CR>
 '''
@@ -109,35 +145,64 @@ repo = 'nvim-treesitter/nvim-treesitter'
 hook_post_source = '''
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'rust', 'toml'},
+    ensure_installed = {'rust', 'toml', 'fish', 'cpp'},
     highlight = {
         enable = true,
     }
 }
 EOF
 '''
-
-# Colorscheme gruvbox
 [[plugins]]
-repo = 'gruvbox-community/gruvbox'
+repo = 'nvim-treesitter/playground'
+depends = 'nvim-treesitter/nvim-treesitter'
+
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
 hook_post_source = '''
-if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
-let g:gruvbox_invert_selection='0'
-colorscheme gruvbox
-set background=dark
+lua <<EOF
+vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
+vim.g.indent_blankline_show_trailing_blankline_indent=false
+
+require("indent_blankline").setup {
+    filetype_exclude = { "help", "startify", "NvimTree", "Term"},
+    space_char_blankline = " ",
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+        "IndentBlanklineIndent3",
+        "IndentBlanklineIndent4",
+        "IndentBlanklineIndent5",
+        "IndentBlanklineIndent6",
+    },
+}
+EOF
 '''
 
-# Indent visualizer
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
+repo = 'p00f/nvim-ts-rainbow'
+depends = 'nvim-treesitter/nvim-treesitter'
 hook_post_source = '''
-let g:indent_guides_exclude_filetypes = ['help']
-hi IndentGuidesOdd  guibg=#53532c ctermbg=58
-hi IndentGuidesEven guibg=#395339 ctermbg=65
-autocmd VimEnter * IndentGuidesEnable
+lua <<EOF
+require("nvim-treesitter.configs").setup {
+    highlight = {},
+    rainbow = {
+        enable = true,
+        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        max_file_lines = nil, -- Do not enable for files with more than n lines, int
+        colors = {
+            "#FFD700",
+            "#87CEFA",
+            "#DA70D6",
+        }, -- table of hex strings
+    }
+}
+EOF
 '''
 
 # Depended by telescope
@@ -147,7 +212,7 @@ repo = 'nvim-lua/plenary.nvim'
 # Popup window fizzy-finder
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-depends =  'folke/which-key.nvim'
+depends = 'folke/which-key.nvim'
 hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/telescope.lua'
 
 [[plugins]]
@@ -160,7 +225,6 @@ depends = ['nvim-lua/plenary.nvim', 'folke/which-key.nvim']
 hook_post_source = '''
 lua <<EOF
 require('gitsigns').setup {
-    numhl = true,
     current_line_blame = true,
     current_line_blame_opts = { delay = 100 },
 }
@@ -181,6 +245,8 @@ EOF
 # Never forget key binding
 [[plugins]]
 repo = 'folke/which-key.nvim'
+# repo = 'zeertzjq/which-key.nvim'
+#rev = 'patch-1'
 hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/which_key.lua'
 
 # Undo with tree
@@ -188,16 +254,26 @@ hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/which_key.lua'
 [[plugins]]
 repo = 'mbbill/undotree'
 hook_post_source = '''
-" enable persistundo
+" enable persist undo
 let target_path = expand('~/.undodir')
 " create the directory and any parent directories
 " if the location does not exist.
 if !isdirectory(target_path)
+vim.g.
     call mkdir(target_path, "p", 0700)
 endif
 let &undodir=target_path
 set undofile
 '''
+
+# ------------------
+# color scheme
+# ------------------
+[[plugins]]
+repo = 'gruvbox-community/gruvbox'
+
+[[plugins]]
+repo = 'tomasiser/vim-code-dark'
 
 # ----
 # lsp
@@ -208,29 +284,98 @@ set undofile
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = 'git checkout release'
-hook_post_source = '''
+depends = 'folke/which-key.nvim'
+hook_source = '''
 " extentions for coc.nvim
 let g:coc_global_extensions = [
     \'coc-json',
     \'coc-lightbulb',
-    \'coc-lua',
     \'coc-rust-analyzer',
     \'coc-texlab',
     \'coc-toml',
+    \'coc-pyright',
+    \'coc-vimlsp',
+    \'coc-diagnostic',
     \]
-" load coc settings
+"   \'coc-sumneko-lua',
+'''
+hook_post_source = '''
 source $HOME/.config/nvim/plugin_settings/coc.vim
 '''
 
 # Telescope CoC integration
 [[plugins]]
 repo = 'fannheyward/telescope-coc.nvim'
-depends = ['folke/which-key.nvim', 'nvim-telescope/telescope.nvim', 'neoclide/coc.nvim']
+depends = [
+    'folke/which-key.nvim',
+    'nvim-telescope/telescope.nvim',
+    'neoclide/coc.nvim',
+]
 hook_post_source = 'luafile $HOME/.config/nvim/plugin_settings/telescope_coc.lua'
 
 # GitHub copilot
 [[plugins]]
 repo = 'github/copilot.vim'
+#hook_source = '''
+#imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
+#let g:copilot_no_tab_map = v:true
+#'''
+
+# Notify
+[[plugins]]
+repo = 'rcarriga/nvim-notify'
+hook_post_source = '''
+lua <<EOF
+require("notify").setup({
+  -- Animation style (see below for details)
+  stages = "fade_in_slide_out",
+
+  -- Function called when a new window is opened, use for changing win settings/config
+  on_open = nil,
+
+  -- Function called when a window is closed
+  on_close = nil,
+
+  -- Render function for notifications. See notify-render()
+  render = "default",
+
+  -- Default timeout for notifications
+  timeout = 5000,
+
+  -- For stages that change opacity this is treated as the highlight behind the window
+  -- Set this to either a highlight group or an RGB hex value e.g. "#000000"
+  background_colour = "Normal",
+
+  -- Minimum width for notification windows
+  minimum_width = 50,
+
+  -- Icons for the different levels
+  icons = {
+    ERROR = "",
+    WARN = "",
+    INFO = "",
+    DEBUG = "",
+    TRACE = "✎",
+  },
+})
+EOF
+'''
+
+# Smooth scroll
+[[plugins]]
+repo = 'karb94/neoscroll.nvim'
+# depends = 'folke/which-key.nvim'
+hook_post_source = '''
+lua <<EOF
+require('neoscroll').setup({mappings = {}})
+local t = {}
+-- Syntax: t[keys] = {function, {function arguments}}
+t['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '100'}}
+t['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '100'}}
+t['zz']    = {'zz', {'100'}}
+require('neoscroll.config').set_mappings(t)
+EOF
+'''
 
 # -----
 # rust
@@ -246,3 +391,73 @@ require('crates').setup()
 EOF
 '''
 
+# Github integration
+[[plugins]]
+repo = 'pwntester/octo.nvim'
+depends = ['nvim-telescope/telescope.nvim',  'kyazdani42/nvim-web-devicons']
+hook_post_source = '''
+lua <<EOF
+require"octo".setup()
+EOF
+'''
+
+# Extension for telescope to select Session
+[[plugins]]
+repo = 'JoseConseco/telescope_sessions_picker.nvim'
+depends = ['nvim-telescope/telescope.nvim', 'folke/which-key.nvim']
+hook_post_source = '''
+lua <<EOF
+require('telescope').setup {
+    extensions = {
+        session_picker = {
+            session_dir = vim.fn.stdpath('data') .. '/sessions',
+        },
+    },
+}
+require('which-key').register(
+    {
+        t = {
+            s = {
+                "<Cmd>lua require('telescope').extensions.sessions_picker.sessions_picker()<CR>",
+                "Session Picker"
+            },
+        },
+    },
+    {
+        prefix = "<Space>"
+    }
+)
+EOF
+'''
+
+# Focus on peace of codes.
+[[plugins]]
+repo = 'hoschi/yode-nvim'
+depends = ['nvim-lua/plenary.nvim']
+hook_post_source = '''
+lua <<EOF
+require('yode-nvim').setup()
+local wk = require("which-key")
+wk.register(
+    {
+        y = {
+            name = "yode",
+            c = { ":YodeCreateSeditorFloating<CR>", "create yode" },
+            r = { ":YodeCreateSeditorReplace<CR>", "replace yode" },
+        }
+    },
+    {
+        prefix = "<Space>",
+        mode = "v"
+    }
+)
+EOF
+'''
+
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
+hook_post_source = '''
+lua <<EOF
+require('colorizer').setup()
+EOF
+'''

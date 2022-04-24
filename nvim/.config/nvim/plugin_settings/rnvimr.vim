@@ -3,7 +3,7 @@
 " -----------------------------------------------------------------------------
 
 " <C-b> to open ranger in proper size(rnvimr_ranger_views[1])
-nnoremap <silent> <C-b> <Cmd>RnvimrToggle<CR><Cmd>RnvimrResize 1<CR>
+nnoremap <silent> <C-b> <Cmd>RnvimrToggle<CR><Cmd>RnvimrResize 2<CR>
 
 " Link CursorLine into RnvimrNormal highlight in the Floating window
 highlight link RnvimrNormal CursorLine

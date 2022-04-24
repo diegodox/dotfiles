@@ -8,24 +8,26 @@
     "suggest.enablePreselect": true,
     "coc.source.around.enable": false,
     "coc.source.buffer.enable": false,
-    "coc.preferences.formatOnSaveFiletypes": ["rust", "cpp"],
+    "coc.preferences.formatOnSaveFiletypes": ["rust", "cpp", "py", "sh"],
     "rust-analyzer.server.path": "/usr/bin/rust-analyzer",
     "rust-analyzer.inlayHints.refreshOnInsertMode": true,
     "rust-analyzer.checkOnSave.command": "clippy",
-    "languageserver": {
-        "ccls": {
-            "command": "ccls",
-            "filetypes": ["c", "cpp", "objc", "objcpp"],
-            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-            "initializationOptions": {
-                "ccls": { "extraArgs": ["--log-file=/tmp/ccls.log", "-v=1"] },
-                "clang": { "extraArgs": ["-std=c++17"] },
-                "cache": { "directory": "/tmp/ccls" },
-                "highlight": { "lsRanges" : true }
-            }
-        }
-    },
+    "rust-analyzer.cargo.allFeatures": true,
+    "clangd.fallbackFlags": ["-std=c++17"],
     "lightbulb.enableSign": true,
+    "sumneko-lua.enableNvimLuaDev": true,
     "lightbulb.signText": "💡",
-    "lightbulb.enableVirtualText": false
+    "lightbulb.enableVirtualText": false,
+    "diagnostic-languageserver.filetypes": {
+        "sh": "shellcheck"
+    },
+    "diagnostic-languageserver.formatFiletypes": {
+      "sh": "shfmt"
+    },
+    "diagnostic-languageserver.formatters": {
+        "shfmt": {
+            "command": "shfmt",
+            "args": ["-i", "4", "-bn", "-ci", "-sr"]
+        }
+    }
 }

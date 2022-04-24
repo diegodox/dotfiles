@@ -72,7 +72,7 @@ function! s:show_jump_documentation()
 endfunction
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
+  if (index(['help'], &filetype) >= 0)
     echo 'h '.expand('<cword>').' to show help'
   elseif (coc#rpc#ready())
     call CocActionAsync('doHover')

@@ -2,6 +2,7 @@
 " General neovim Settings
 "------------------------------------------------------------------------------
 
+"set shell=/bin/bash " Fish doesn't play all that well with others
 syntax enable
 filetype plugin indent on
 set title " set window title as buffer name
@@ -42,4 +43,5 @@ set termguicolors
 " guivim settings
 " ----------------
 set guifont=Hack\ Nerd\ Font,Noto\ Sans\ Mono\ CJK\ JP:h13
+"set guifont=Noto\ Sans\ Mono\ CJK\ JP:h13
 
