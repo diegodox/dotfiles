@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "gitsbumodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
