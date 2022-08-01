@@ -1,0 +1,21 @@
+[user]
+    name = Diego Fujii
+    email = android.mxdiego9@gmail.com
+[diff]
+    algorithm = histogram
+    colorMoved = dimmed-zebra
+[core]
+    pager = delta
+	quotepath = false
+[delta]
+    line-numbers = true
+[interactive]
+    diffFilter = delta
+[init]
+    defaultBranch = main
+[pull]
+	rebase = false
+[mergetool "nvimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[merge]
+	tool = nvimdiff
