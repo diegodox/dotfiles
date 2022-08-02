@@ -5,29 +5,29 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-STASH_TIME=$(date +%s)
+TIME=$(date +%s)
 
 # Stash all changes
-STASH=pre-commit-$STASH_TIME
+STASH=pre-commit-$TIME
 git stash push --include-untracked --quiet --message "$STASH"
 
 # Move to temporary branch
-PRECOMMIT_BRANCH="pre-commit-$STASH_TIME"
-git checkout --quiet -b "$PRECOMMIT_BRANCH"
+TMP_BRANCH="onstaeg-$TIME"
+git checkout --quiet -b "$TMP_BRANCH"
 
 # Apply changes
 STASH_NUM=$(git stash list | grep "$STASH" | sed -re 's/stash@\{(.*)\}.*/\1/')
 if [ -n "$STASH_NUM" ]; then
 	git stash apply --index --quiet "$STASH_NUM"
 else
-	echo "Stash not found, you may try to commit with no index..."
+	echo "Stash not found, you may call with no change..."
 fi
 
 # Delete unstaged changes
 git clean --quiet --force -d
 git restore .
 
-# Do for staged changes
+# Run passed command for staged changes
 "$@"
 EXIT_VALUE=$?
 
@@ -36,7 +36,7 @@ git reset --hard --quiet
 git checkout --quiet -
 
 # Delete temporary branch
-git branch --quiet --delete "$PRECOMMIT_BRANCH"
+git branch --quiet --delete "$TMP_BRANCH"
 
 # Restore changes
 if [ -n "$STASH_NUM" ]; then
