@@ -12,7 +12,7 @@ STASH=pre-commit-$TIME
 git stash push --include-untracked --quiet --message "$STASH"
 
 # Move to temporary branch
-TMP_BRANCH="onstaeg-$TIME"
+TMP_BRANCH="onstage-$TIME"
 git checkout --quiet -b "$TMP_BRANCH"
 
 # Apply changes
