@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -z "$1" ]; then
     echo "no command is passed"
@@ -25,10 +25,16 @@ fi
 
 # Delete unstaged changes
 git clean --quiet --force -d
-git restore .
+git restore --quiet .
 
 # Run passed command for staged changes
-"$@"
+bash -c "$@" &
+JOB_PID=$!
+killjob(){
+    kill $JOB_PID
+}
+trap killjob SIGINT
+wait $JOB_PID
 EXIT_VALUE=$?
 
 # Move to previous branch
