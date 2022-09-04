@@ -163,6 +163,7 @@ bindsym --release $mod+e exec neovide
 
 # dunst context menu
 bindsym $mod+period exec dunstctl context
+bindsym $mod+period exec "dunstctl context"
 
 # -----------------------------------------------------------------------------
 # workspace/container/window/layout key bind
@@ -244,9 +245,14 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+bindsym $mod+Shift+Return move scratchpad
+
 # resize
 bindsym $mod+Ctrl+h exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Left"
 bindsym $mod+Ctrl+j exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Down"
 bindsym $mod+Ctrl+k exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Up"
 bindsym $mod+Ctrl+l exec --no-startup-id ~/.config/i3/helpers-for-i3/i3-smart-resize "Right"
+
+# Switch Output
+bindsym $mod+Shift+Tab move workspace to output next
 
