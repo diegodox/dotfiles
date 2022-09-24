@@ -48,6 +48,11 @@ function fish_prompt
     set_color $pwd_bg_color
     echo -ne \uE0B4
 
+    set_color brblack
+    if test -n "$IN_NIX_SHELL"
+        echo -n " (nix)"
+    end
+
     set_color $git_tx_color
     echo -ns (__fish_git_prompt)
 
