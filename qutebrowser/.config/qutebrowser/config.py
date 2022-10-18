@@ -233,6 +233,7 @@ c.auto_save.session = True
 c.url.searchengines = {
     "DEFAULT": "https://google.com/search?q={}",
     "google": "https://google.com/search?q={}",
+    "github": "https://github.com/search?q={}",
     "wikiwand": "https://www.wikiwand.com/ja/{}?fullSearch=true",
     "archwiki": "https://wiki.archlinux.org/?search={}",
     "ruststd": "https://doc.rust-lang.org/std/?search={}",
