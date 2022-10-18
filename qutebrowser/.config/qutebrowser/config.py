@@ -197,6 +197,11 @@ c.tabs.position = "left"
 #   - switching: Show the tab bar when switching tabs.
 c.tabs.show = "never"
 
+# Format to use for the tab title for pinned tabs.
+# The same placeholders like for tabs.title.format are defined.
+# Type: FormatString(https://qutebrowser.org/doc/help/settings.html#types)
+c.tabs.title.format_pinned = "{audio}{index}: {current_title}"
+
 c.statusbar.show = "in-mode"
 
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
