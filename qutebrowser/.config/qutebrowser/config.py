@@ -155,6 +155,10 @@ config.set("content.javascript.enabled", True, "chrome://*/*")
 # Type: Bool
 config.set("content.javascript.enabled", True, "qute://*/*")
 
+# Enable clipboard access.
+# Type: Bool
+config.set("content.javascript.can_access_clipboard", True)
+
 # Allow pdf.js to view PDF files in the browser. Note that the files can
 # still be downloaded by clicking the download button in the pdf.js
 # viewer.
