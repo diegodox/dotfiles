@@ -1,0 +1,1 @@
+set editorcmd env GLFW_IM_MODULE=ibus kitty nvim %f '+normal!%lGzv%c|'
