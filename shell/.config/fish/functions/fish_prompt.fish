@@ -1,20 +1,44 @@
 function fish_prompt
-    set exit_status $status
+    set -f exit_status $status
 
+    # -----------------------------
+    # define color
+    # -----------------------------
     if test "$exit_status" -eq 0
-        set exit_status_color green
+        set -f exit_status_color green
     else
-        set exit_status_color red
+        set -f exit_status_color red
     end
 
-    set usr_bg_color blue
-    set usr_tx_color brwhite
+    set -f usr_bg_color blue
+    set -f usr_tx_color brwhite
 
-    set pwd_bg_color yellow
-    set pwd_tx_color red
+    set -f pwd_bg_color yellow
+    set -f pwd_tx_color red
 
-    set git_tx_color brblack
+    set -f git_tx_color brblack
 
+    # -----------------------------
+    # configure git prompt
+    # -----------------------------
+    set -g __fish_git_prompt_char_upstream_ahead ""
+    set -g __fish_git_prompt_char_upstream_behind ""
+    set -g __fish_git_prompt_char_upstream_prefix ""
+
+    set -g __fish_git_prompt_char_stagedstate "●"
+    set -g __fish_git_prompt_char_dirtystate "✚"
+    set -g __fish_git_prompt_char_untrackedfiles "…"
+    set -g __fish_git_prompt_char_conflictedstate "✖"
+    set -g __fish_git_prompt_char_cleanstate "✔"
+
+    set -g __fish_git_prompt_color_dirtystate blue
+    set -g __fish_git_prompt_color_stagedstate yellow
+    set -g __fish_git_prompt_color_invalidstate red
+    set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
+
+    # -----------------------------
+    # draw prompt
+    # -----------------------------
     set_color brblack
     echo -n "["(date "+%H:%M")"]"
 
