@@ -53,8 +53,8 @@ set $ws2 2
 set $ws3 3
 set $ws4 4 WWW
 set $ws5 5 CHAT
-set $ws6 6 VBOX
-set $ws7 7 ZOOM
+set $ws6 6
+set $ws7 7 TOOL
 set $ws8 8
 set $ws9 9 MUSIC
 set $ws10 10
@@ -62,8 +62,7 @@ set $ws10 10
 # Define names for default workspaces for which named with usage of 'workspace'.
 set $ws_web 4 WWW
 set $ws_chat 5 CHAT
-set $ws_vbox 6 VBOX
-set $ws_zoom 7 ZOOM
+set $ws_tool 7 TOOL
 set $ws_music 9 MUSIC
 
 # workspace assign rule ( to physical output )
@@ -73,20 +72,13 @@ workspace "$ws3" output primary
 workspace "$ws_web" output DP-0
 workspace "$ws_chat" output DP-0
 workspace "$ws_music" output DP-0
-workspace "$ws_vbox" output primary
-workspace "$ws_zoom" output primary
-
 
 # window assign rule
+assign [class="firefox" window_type="normal"] $ws_web
 assign [class="Slack"] $ws_chat
 for_window [class="Spotify"] move to workspace $ws_music
-assign [class="VirtualBox Manager"] $ws_vbox
-assign [class="VirtualBox Machine"] $ws_vbox
-assign [class="zoom"] $ws_zoom
-for_window [class="microsoft teams - preview"] $ws_zoom
-assign [class="firefox"] $ws_web
-assign [class="Chromium"] $ws_web
-assign [class="qutebrowser"] $ws_web
+assign [class="VirtualBox Manager"] $ws_tool
+assign [class="Pavucontrol"] $ws_tool
 
 # window to be float on default
 for_window [class="zoom"] floating enable
