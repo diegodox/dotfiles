@@ -76,6 +76,9 @@ function fish_prompt
     if test -n "$IN_NIX_SHELL"
         echo -n " (nix)"
     end
+    if test -n "$VIRTUAL_ENV"
+        echo -n " (venv)"
+    end
 
     set_color $git_tx_color
     echo -ns (__fish_git_prompt)
