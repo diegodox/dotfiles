@@ -35,6 +35,10 @@ if status is-interactive
         abbr -a v nvim
     end
 
+    if command -v direnv >/dev/null
+        direnv hook fish | source
+    end
+
 end
 
 set PATH ~/.cargo/bin $PATH
