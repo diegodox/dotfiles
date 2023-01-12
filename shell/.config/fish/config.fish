@@ -21,7 +21,7 @@ if status is-interactive
         abbr -a cat bat
     end
 
-    if test "$NVIM_LISTEN_ADDRESS" and test "$LAZYGIT_ACTIVE"
+    if test -n "$NVIM_LISTEN_ADDRESS" -a -n "$LAZYGIT_ACTIVE"
         alias nvim "nvr -cc split --remote-wait +'set bufhidden=wipe'"
         set -x VISUAL "nvr -cc split --remote-wait +'set bufhidden=wipe'"
         set -x EDITOR "nvr -cc split --remote-wait +'set bufhidden=wipe'"
