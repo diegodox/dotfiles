@@ -40,5 +40,3 @@ if status is-interactive
     end
 
 end
-
-set PATH ~/.cargo/bin $PATH
