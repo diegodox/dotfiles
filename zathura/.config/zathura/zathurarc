@@ -29,13 +29,18 @@ set highlight-active-color  "#98971a"
 set default-bg              "#1d2021"
 set default-fg              "#001512"
 
-set recolor-lightcolor      "#282828"
-set recolor-darkcolor       "#ebdbb2"
+# gruvbox
+# set recolor-lightcolor      "#282828"
+# set recolor-darkcolor       "#ebdbb2"
+
+# codedrak
+set recolor-lightcolor      "#1e1e1e"
+set recolor-darkcolor       "#d4d4d4"
 
 set first-page-column       1
 set page-padding            7
 set selection-clipboard     clipboard
 
 map i                       recolor
-set recolor                 true
+set recolor                 false
 
