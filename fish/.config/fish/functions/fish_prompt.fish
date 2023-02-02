@@ -74,10 +74,22 @@ function fish_prompt
 
     set_color brblack
     if test -n "$IN_NIX_SHELL"
-        echo -n " (nix)"
+        if test -z "$NERDFONT"
+            echo -n " (nix)"
+        else
+            set_color blue
+            echo -n " "
+            set_color brblack
+        end
     end
     if test -n "$VIRTUAL_ENV"
-        echo -n " (venv)"
+        if test -z "$NERDFONT"
+            echo -n " (venv)"
+        else
+            set_color yellow
+            echo -n " "
+            set_color brblack
+        end
     end
 
     set_color $git_tx_color
