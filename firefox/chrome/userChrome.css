@@ -1,14 +1,13 @@
 #TabsToolbar {
-    visibility: collapse;
+  visibility: collapse;
 }
 
 #nav-bar {
-    --navbar-margin: -44px;
-
-    margin-top: var(--navbar-margin);
-    margin-bottom: 0;
-    z-index: -100;
-    transition: all 0.3s ease !important;
-    opacity: 0;
-    background-color: rgba(0,0,0,0.8) !important;
+  --navbar-margin: -44px;
+  margin-top: var(--navbar-margin);
+  margin-bottom: 0;
+  z-index: -100;
+  transition: all 0.3s ease !important;
+  opacity: 0;
+  background-color: rgba(0,0,0,0.8) !important;
 }
